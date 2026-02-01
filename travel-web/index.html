@@ -10,6 +10,7 @@
 </head>
 
 <body class="font-[Kanit]">
+  
   <nav
     class="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -79,79 +80,42 @@
   <script type="module" src="/src/main.ts"></script>
 
   <header>
-    <h1 class="text-6xl font-bold text-center my-auto text-black drop-shadow-lg mt-4">
-      เส้นทางท่องเที่ยวเชิงอาหารอำเภอท่าฉาง</h1>
-    <div class="flex justify-center h-screen">
-      <img class="mx-auto object-top" src="ท่าฉาง.png" alt="tasa">
-    </div>
-    <div class="relative flex justify-center space-x-4 mb-8">
-      <!-- Pagination Buttons -->
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        1
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        2
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        3
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        4
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        5
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        6
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        7
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        8
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        9
-      </button>
-      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
-           text-white font-bold rounded
-           transition-transform duration-200
-           hover:scale-110">
-        10
-      </button>
-    </div>
+    <h1 class="text-6xl font-bold text-center text-black drop-shadow-lg mt-4">
+  เส้นทางท่องเที่ยวเชิงอาหารอำเภอท่าฉาง
+</h1>
+
+<!-- container หลัก -->
+<div class="relative flex justify-center h-screen">
+
+  <!-- รูปแผนที่ -->
+  <img class="mx-auto object-contain" src="ท่าฉาง.png" alt="tasa">
+
+  <!-- pagination ลอยบนรูป -->
+  <div class="absolute bottom-16 left-1/2 -translate-x-1/2
+              flex gap-3
+              bg-black/25 backdrop-blur-md
+              px-5 py-3 rounded-full">
+
+    <button class="page-btn">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">3</button>
+    <button class="page-btn">4</button>
+    <button class="page-btn">5</button>
+    <button class="page-btn">6</button>
+    <button class="page-btn">7</button>
+    <button class="page-btn">8</button>
+    <button class="page-btn">9</button>
+    <button class="page-btn">10</button>
+
+  </div>
+
+</div>
 
   </header>
-  <article class="bg-white/70 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg">
-    <section class="bg-gradient-to-br from-slate-50 to-slate-200">
-      <div class="flex flex-col md:flex-row items-start gap-6">
+
+  <article class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg">
+    <section class="bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <div class="flex flex-col md:flex-row items-start gap-6 p-6">
         <div id="parallax-card" class="relative w-full md:w-1/3 rounded-2xl overflow-hidden
          [perspective:1000px] select-none">
           <img src="A-removebg-preview.png" alt="food" class="block w-full h-full object-cover
@@ -161,126 +125,71 @@
           <div id="parallax-shine"
             class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-150"></div>
         </div>
-        <script>
-          const card = document.getElementById("parallax-card");
-          const img = document.getElementById("parallax-img");
-          const shine = document.getElementById("parallax-shine");
-
-          const MAX_ROTATE = 10;   // degrees
-          const MAX_MOVE = 10;     // px (slight translate)
-          const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-          function setTransform(px, py) {
-            if (REDUCED) return;
-
-            // px,py in range [-1..1]
-            const rotY = px * MAX_ROTATE;
-            const rotX = -py * MAX_ROTATE;
-            const tx = px * MAX_MOVE;
-            const ty = py * MAX_MOVE;
-
-            img.style.transform =
-              `translate3d(${tx}px, ${ty}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.03)`;
-
-            // Shine follows pointer
-            const shineX = (px + 1) * 50; // 0..100
-            const shineY = (py + 1) * 50; // 0..100
-            shine.style.opacity = "1";
-            shine.style.background =
-              `radial-gradient(circle at ${shineX}% ${shineY}%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%)`;
-          }
-
-          function reset() {
-            img.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0) scale(1)";
-            shine.style.opacity = "0";
-          }
-
-          // Mouse (PC)
-          card.addEventListener("mousemove", (e) => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width;  // 0..1
-            const y = (e.clientY - r.top) / r.height;  // 0..1
-            const px = (x - 0.5) * 2;                  // -1..1
-            const py = (y - 0.5) * 2;                  // -1..1
-            setTransform(px, py);
-          });
-
-          card.addEventListener("mouseleave", reset);
-
-          // Touch (Mobile): tilt while finger moves
-          card.addEventListener("touchmove", (e) => {
-            const t = e.touches[0];
-            const r = card.getBoundingClientRect();
-            const x = (t.clientX - r.left) / r.width;
-            const y = (t.clientY - r.top) / r.height;
-            const px = (x - 0.5) * 2;
-            const py = (y - 0.5) * 2;
-            setTransform(px, py);
-          }, { passive: true });
-
-          card.addEventListener("touchend", reset);
-        </script>
 
         <div class="flex flex-col gap-6 flex-1 text-gray-200 leading-relaxed">
           <!-- Title -->
-          <h1 class="text-3xl md:text-4xl font-extrabold text-center text-white tracking-wide">
+          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
             แกงคั่วหัวโหนดปลากระเบนย่าง
           </h1>
 
           <!-- Intro -->
-          <p class="text-center text-gray-300 max-w-2xl mx-auto">
+          <p class="mt-3 text-slate-600 leading-relaxed max-w-2xl">
             แกงหัวโหนดปลาเบนย่าง อาหารถิ่นกว่า 3 ชั่วอายุคน สูตรเด็ด อำเภอท่าฉาง
             ขอเชิญชวนร่วมโหวตเมนูอาหารถิ่นของจังหวัดสุราษฎร์ธานี
-            <span class="italic text-sm text-gray-400 block mt-1">
+            <span class="italic text-sm text-slate-500 block mt-1">
               “รสชาติ...ที่หายไป – The Lost Taste” ปีงบประมาณ 2568
             </span>
           </p>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
-          <!-- Section: Tagline -->
-          <div class="border-l-4 border-orange-400 pl-4">
-            <h2 class="text-xl font-semibold text-orange-300 mb-1">
-              คำโปรย
-            </h2>
-            <p class="italic text-gray-100">
-              กะทิแตกมัน หอมควันปลาย่าง รสชาติแห่งตำนาน
-            </p>
-          </div>
 
-          <!-- Section: Story -->
-          <div>
-            <h2 class="text-xl font-semibold text-white mb-2 border-b border-white/10 pb-1">
-              เรื่องราวสินค้า
-            </h2>
-            <p class="text-gray-300">
-              จากเสียงคลื่นลมและวิถีชีวิตชาวเล สู่ตำนานความอร่อยที่หาทานได้ยาก
-              <span class="text-white font-medium">“แกงหัวโหนดปลากระเบนย่าง”</span>
-              คือมรดกทางรสชาติแห่งท่าฉางที่สืบทอดผ่านกาลเวลา
-              ความโดดเด่นอยู่ที่การนำปลากระเบนจากท้องทะเลมาย่างไฟ
-              ให้ส่งกลิ่นหอมฉุย ผสานกับหัวโหนด (ยอดอ่อนตาลโตนด)
-              เคี่ยวกับเครื่องแกงกะทิตำมือรสเข้มข้นตามฉบับปักษ์ใต้แท้
-              <br /><br />
-              เมนูนี้เคยเป็นศูนย์รวมใจในงานบุญและมื้ออาหารครอบครัว
-              ยิ่งอุ่นยิ่งอร่อย กินคู่ข้าวสวยร้อน ๆ หรือขนมจีน
-              ไม่ใช่แค่อาหาร แต่คือการสัมผัสรากเหง้าและความทรงจำ
-              ที่ชาวท่าฉางตั้งใจอนุรักษ์ไว้ไม่ให้สูญหาย
-            </p>
-          </div>
+            <!-- Section: Tagline -->
+            <div class="border-l-4 border-orange-400 pl-4">
+              <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="h-9 w-1 rounded-full bg-orange-500"></span>
+                  <h2 class="text-lg font-bold text-slate-900">คำโปรย</h2>
+                </div>
+                <p class="text-slate-700 italic">
+                  กะทิแตกมัน หอมควันปลาย่าง รสชาติแห่งตำนาน
+                </p>
+              </div>
 
-          <!-- Section: Highlights -->
-          <div>
-            <h2 class="text-xl font-semibold text-white mb-3 border-b border-white/10 pb-1">
-              จุดเด่น
-            </h2>
-            <ul class="space-y-2 text-gray-300">
-              <li>🌴 <span class="text-white font-medium">หัวโหนด</span> – ยอดตาลอ่อน วัตถุดิบล้ำค่าในท้องถิ่น</li>
-              <li>🌶️ <span class="text-white font-medium">เครื่องแกงตำมือ</span> – เข้มข้น ถึงพริกถึงแกง</li>
-              <li>🔥 <span class="text-white font-medium">ปลากระเบนย่าง</span> – หอมฉุย เอกลักษณ์ชาวเล</li>
-              <li>🍜 <span class="text-white font-medium">ยิ่งอุ่น ยิ่งหรอย</span> – กินคู่ขนมจีนเข้ากันดีนัก</li>
-            </ul>
+              <!-- Highlights card -->
+              <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-3">จุดเด่น</h2>
+                <ul class="space-y-2 text-slate-700">
+                  <li>🌴 <span class="font-semibold text-slate-900">หัวโหนด</span> – ยอดตาลอ่อน วัตถุดิบล้ำค่าในท้องถิ่น
+                  </li>
+                  <li>🌶️ <span class="font-semibold text-slate-900">เครื่องแกงตำมือ</span> – เข้มข้น ถึงพริกถึงแกง</li>
+                  <li>🔥 <span class="font-semibold text-slate-900">ปลากระเบนย่าง</span> – หอมฉุย เอกลักษณ์ชาวเล</li>
+                  <li>🍜 <span class="font-semibold text-slate-900">ยิ่งอุ่น ยิ่งหรอย</span> – กินคู่ขนมจีนเข้ากันดีนัก
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Story card (กินเต็มแถวบนจอใหญ่) -->
+              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-3">เรื่องราวสินค้า</h2>
+                <p class="text-slate-700 leading-relaxed">
+                  จากเสียงคลื่นลมและวิถีชีวิตชาวเล สู่ตำนานความอร่อยที่หาทานได้ยาก
+                  <span class="font-semibold text-slate-900">“แกงหัวโหนดปลากระเบนย่าง”</span>
+                  คือมรดกทางรสชาติแห่งท่าฉางที่สืบทอดผ่านกาลเวลา
+                  ความโดดเด่นอยู่ที่การนำปลากระเบนจากท้องทะเลมาย่างไฟให้ส่งกลิ่นหอมฉุย
+                  ผสานกับหัวโหนด (ยอดอ่อนตาลโตนด) เคี่ยวกับเครื่องแกงกะทิตำมือรสเข้มข้นตามฉบับปักษ์ใต้แท้
+                  <br /><br />
+                  เมนูนี้เคยเป็นศูนย์รวมใจในงานบุญและมื้ออาหารครอบครัว ยิ่งอุ่นยิ่งอร่อย
+                  กินคู่ข้าวสวยร้อน ๆ หรือขนมจีน ไม่ใช่แค่อาหาร แต่คือการสัมผัสรากเหง้าและความทรงจำ
+                  ที่ชาวท่าฉางตั้งใจอนุรักษ์ไว้ไม่ให้สูญหาย
+                </p>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </section>
+    
 
   </article>
 
@@ -431,6 +340,66 @@
          active:scale-95">
     ↑
   </button>
+
+    <script>
+          const card = document.getElementById("parallax-card");
+          const img = document.getElementById("parallax-img");
+          const shine = document.getElementById("parallax-shine");
+
+          const MAX_ROTATE = 10;   // degrees
+          const MAX_MOVE = 10;     // px (slight translate)
+          const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+          function setTransform(px, py) {
+            if (REDUCED) return;
+
+            // px,py in range [-1..1]
+            const rotY = px * MAX_ROTATE;
+            const rotX = -py * MAX_ROTATE;
+            const tx = px * MAX_MOVE;
+            const ty = py * MAX_MOVE;
+
+            img.style.transform =
+              `translate3d(${tx}px, ${ty}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.03)`;
+
+            // Shine follows pointer
+            const shineX = (px + 1) * 50; // 0..100
+            const shineY = (py + 1) * 50; // 0..100
+            shine.style.opacity = "1";
+            shine.style.background =
+              `radial-gradient(circle at ${shineX}% ${shineY}%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%)`;
+          }
+
+          function reset() {
+            img.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0) scale(1)";
+            shine.style.opacity = "0";
+          }
+
+          // Mouse (PC)
+          card.addEventListener("mousemove", (e) => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width;  // 0..1
+            const y = (e.clientY - r.top) / r.height;  // 0..1
+            const px = (x - 0.5) * 2;                  // -1..1
+            const py = (y - 0.5) * 2;                  // -1..1
+            setTransform(px, py);
+          });
+
+          card.addEventListener("mouseleave", reset);
+
+          // Touch (Mobile): tilt while finger moves
+          card.addEventListener("touchmove", (e) => {
+            const t = e.touches[0];
+            const r = card.getBoundingClientRect();
+            const x = (t.clientX - r.left) / r.width;
+            const y = (t.clientY - r.top) / r.height;
+            const px = (x - 0.5) * 2;
+            const py = (y - 0.5) * 2;
+            setTransform(px, py);
+          }, { passive: true });
+
+          card.addEventListener("touchend", reset);
+        </script>
   <script>
     const btn = document.getElementById("backToTop");
 
