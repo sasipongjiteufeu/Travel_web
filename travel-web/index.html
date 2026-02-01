@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>travel-web</title>
+</head>
+
+<body class="font-[Kanit]">
+  <nav
+    class="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button type="button" command="--toggle" commandfor="mobile-menu"
+            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+              aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+              aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+              <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex shrink-0 items-center">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"
+              class="h-8 w-auto" />
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+              <a href="#"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+              <a href="#"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+              <a href="#"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+          <el-menu anchor="bottom end" popover
+            class="w-48 origin-top-right rounded-md bg-gray-800 py-1 outline -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Your
+              profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Sign
+              out</a>
+          </el-menu>
+          </el-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+      <div class="space-y-1 px-2 pt-2 pb-3">
+        <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+        <a href="#" aria-current="page"
+          class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+        <a href="#"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+        <a href="#"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+        <a href="#"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+      </div>
+    </el-disclosure>
+  </nav>
+  <script type="module" src="/src/main.ts"></script>
+
+  <header>
+    <h1 class="text-6xl font-bold text-center my-auto text-black drop-shadow-lg mt-4">
+      เส้นทางท่องเที่ยวเชิงอาหารอำเภอท่าฉาง</h1>
+    <div class="flex justify-center h-screen">
+      <img class="mx-auto object-top" src="ท่าฉาง.png" alt="tasa">
+    </div>
+    <div class="relative flex justify-center space-x-4 mb-8">
+      <!-- Pagination Buttons -->
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        1
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        2
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        3
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        4
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        5
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        6
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        7
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        8
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        9
+      </button>
+      <button class="w-10 h-10 bg-gradient-to-r from-teal-200 to-lime-200
+           text-white font-bold rounded
+           transition-transform duration-200
+           hover:scale-110">
+        10
+      </button>
+    </div>
+
+  </header>
+  <article class="bg-white/70 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg">
+    <section class="bg-gradient-to-br from-slate-50 to-slate-200">
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <div id="parallax-card" class="relative w-full md:w-1/3 rounded-2xl overflow-hidden
+         [perspective:1000px] select-none">
+          <img src="A-removebg-preview.png" alt="food" class="block w-full h-full object-cover
+           will-change-transform transition-transform duration-150" id="parallax-img" />
+
+          <!-- light/shine overlay -->
+          <div id="parallax-shine"
+            class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-150"></div>
+        </div>
+        <script>
+          const card = document.getElementById("parallax-card");
+          const img = document.getElementById("parallax-img");
+          const shine = document.getElementById("parallax-shine");
+
+          const MAX_ROTATE = 10;   // degrees
+          const MAX_MOVE = 10;     // px (slight translate)
+          const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+          function setTransform(px, py) {
+            if (REDUCED) return;
+
+            // px,py in range [-1..1]
+            const rotY = px * MAX_ROTATE;
+            const rotX = -py * MAX_ROTATE;
+            const tx = px * MAX_MOVE;
+            const ty = py * MAX_MOVE;
+
+            img.style.transform =
+              `translate3d(${tx}px, ${ty}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.03)`;
+
+            // Shine follows pointer
+            const shineX = (px + 1) * 50; // 0..100
+            const shineY = (py + 1) * 50; // 0..100
+            shine.style.opacity = "1";
+            shine.style.background =
+              `radial-gradient(circle at ${shineX}% ${shineY}%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%)`;
+          }
+
+          function reset() {
+            img.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0) scale(1)";
+            shine.style.opacity = "0";
+          }
+
+          // Mouse (PC)
+          card.addEventListener("mousemove", (e) => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width;  // 0..1
+            const y = (e.clientY - r.top) / r.height;  // 0..1
+            const px = (x - 0.5) * 2;                  // -1..1
+            const py = (y - 0.5) * 2;                  // -1..1
+            setTransform(px, py);
+          });
+
+          card.addEventListener("mouseleave", reset);
+
+          // Touch (Mobile): tilt while finger moves
+          card.addEventListener("touchmove", (e) => {
+            const t = e.touches[0];
+            const r = card.getBoundingClientRect();
+            const x = (t.clientX - r.left) / r.width;
+            const y = (t.clientY - r.top) / r.height;
+            const px = (x - 0.5) * 2;
+            const py = (y - 0.5) * 2;
+            setTransform(px, py);
+          }, { passive: true });
+
+          card.addEventListener("touchend", reset);
+        </script>
+
+        <div class="flex flex-col gap-6 flex-1 text-gray-200 leading-relaxed">
+          <!-- Title -->
+          <h1 class="text-3xl md:text-4xl font-extrabold text-center text-white tracking-wide">
+            แกงคั่วหัวโหนดปลากระเบนย่าง
+          </h1>
+
+          <!-- Intro -->
+          <p class="text-center text-gray-300 max-w-2xl mx-auto">
+            แกงหัวโหนดปลาเบนย่าง อาหารถิ่นกว่า 3 ชั่วอายุคน สูตรเด็ด อำเภอท่าฉาง
+            ขอเชิญชวนร่วมโหวตเมนูอาหารถิ่นของจังหวัดสุราษฎร์ธานี
+            <span class="italic text-sm text-gray-400 block mt-1">
+              “รสชาติ...ที่หายไป – The Lost Taste” ปีงบประมาณ 2568
+            </span>
+          </p>
+
+          <!-- Section: Tagline -->
+          <div class="border-l-4 border-orange-400 pl-4">
+            <h2 class="text-xl font-semibold text-orange-300 mb-1">
+              คำโปรย
+            </h2>
+            <p class="italic text-gray-100">
+              กะทิแตกมัน หอมควันปลาย่าง รสชาติแห่งตำนาน
+            </p>
+          </div>
+
+          <!-- Section: Story -->
+          <div>
+            <h2 class="text-xl font-semibold text-white mb-2 border-b border-white/10 pb-1">
+              เรื่องราวสินค้า
+            </h2>
+            <p class="text-gray-300">
+              จากเสียงคลื่นลมและวิถีชีวิตชาวเล สู่ตำนานความอร่อยที่หาทานได้ยาก
+              <span class="text-white font-medium">“แกงหัวโหนดปลากระเบนย่าง”</span>
+              คือมรดกทางรสชาติแห่งท่าฉางที่สืบทอดผ่านกาลเวลา
+              ความโดดเด่นอยู่ที่การนำปลากระเบนจากท้องทะเลมาย่างไฟ
+              ให้ส่งกลิ่นหอมฉุย ผสานกับหัวโหนด (ยอดอ่อนตาลโตนด)
+              เคี่ยวกับเครื่องแกงกะทิตำมือรสเข้มข้นตามฉบับปักษ์ใต้แท้
+              <br /><br />
+              เมนูนี้เคยเป็นศูนย์รวมใจในงานบุญและมื้ออาหารครอบครัว
+              ยิ่งอุ่นยิ่งอร่อย กินคู่ข้าวสวยร้อน ๆ หรือขนมจีน
+              ไม่ใช่แค่อาหาร แต่คือการสัมผัสรากเหง้าและความทรงจำ
+              ที่ชาวท่าฉางตั้งใจอนุรักษ์ไว้ไม่ให้สูญหาย
+            </p>
+          </div>
+
+          <!-- Section: Highlights -->
+          <div>
+            <h2 class="text-xl font-semibold text-white mb-3 border-b border-white/10 pb-1">
+              จุดเด่น
+            </h2>
+            <ul class="space-y-2 text-gray-300">
+              <li>🌴 <span class="text-white font-medium">หัวโหนด</span> – ยอดตาลอ่อน วัตถุดิบล้ำค่าในท้องถิ่น</li>
+              <li>🌶️ <span class="text-white font-medium">เครื่องแกงตำมือ</span> – เข้มข้น ถึงพริกถึงแกง</li>
+              <li>🔥 <span class="text-white font-medium">ปลากระเบนย่าง</span> – หอมฉุย เอกลักษณ์ชาวเล</li>
+              <li>🍜 <span class="text-white font-medium">ยิ่งอุ่น ยิ่งหรอย</span> – กินคู่ขนมจีนเข้ากันดีนัก</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <article class="prose lg:prose-xl mx-auto my-8 px-4 bg-gray-800/50 p-6 rounded-lg">
+    <h1>Welcome to Travel Web</h1>
+    <p>Your gateway to exploring the world. Discover new destinations, plan your trips, and share your travel
+      experiences with our vibrant community.</p>
+    <h2>Explore Destinations</h2>
+    <p>Browse through a curated list of popular travel destinations, complete with guides, tips, and recommendations to
+      make your journey unforgettable.</p>
+    <h2>Plan Your Trip</h2>
+    <p>Use our trip planning tools to organize your itinerary, book accommodations, and find activities that suit your
+      interests.</p>
+    <h2>Join the Community</h2>
+    <p>Connect with fellow travelers, share your stories, and get inspired by the adventures of others in our community
+      forums.</p>
+  </article>
+  <article class="prose lg:prose-xl mx-auto my-8 px-4 bg-gray-800/50 p-6 rounded-lg">
+    <h1>Welcome to Travel Web</h1>
+    <p>Your gateway to exploring the world. Discover new destinations, plan your trips, and share your travel
+      experiences with our vibrant community.</p>
+    <h2>Explore Destinations</h2>
+    <p>Browse through a curated list of popular travel destinations, complete with guides, tips, and recommendations to
+      make your journey unforgettable.</p>
+    <h2>Plan Your Trip</h2>
+    <p>Use our trip planning tools to organize your itinerary, book accommodations, and find activities that suit your
+      interests.</p>
+    <h2>Join the Community</h2>
+    <p>Connect with fellow travelers, share your stories, and get inspired by the adventures of others in our community
+      forums.</p>
+  </article>
+  <article class="prose lg:prose-xl mx-auto my-8 px-4 bg-gray-800/50 p-6 rounded-lg">
+    <h1>Welcome to Travel Web</h1>
+    <p>Your gateway to exploring the world. Discover new destinations, plan your trips, and share your travel
+      experiences with our vibrant community.</p>
+    <h2>Explore Destinations</h2>
+    <p>Browse through a curated list of popular travel destinations, complete with guides, tips, and recommendations to
+      make your journey unforgettable.</p>
+    <h2>Plan Your Trip</h2>
+    <p>Use our trip planning tools to organize your itinerary, book accommodations, and find activities that suit your
+      interests.</p>
+    <h2>Join the Community</h2>
+    <p>Connect with fellow travelers, share your stories, and get inspired by the adventures of others in our community
+      forums.</p>
+  </article>
+  <article class="prose lg:prose-xl mx-auto my-8 px-4 bg-gray-800/50 p-6 rounded-lg">
+    <h1>Welcome to Travel Web</h1>
+    <p>Your gateway to exploring the world. Discover new destinations, plan your trips, and share your travel
+      experiences with our vibrant community.</p>
+    <h2>Explore Destinations</h2>
+    <p>Browse through a curated list of popular travel destinations, complete with guides, tips, and recommendations to
+      make your journey unforgettable.</p>
+    <h2>Plan Your Trip</h2>
+    <p>Use our trip planning tools to organize your itinerary, book accommodations, and find activities that suit your
+      interests.</p>
+    <h2>Join the Community</h2>
+    <p>Connect with fellow travelers, share your stories, and get inspired by the adventures of others in our community
+      forums.</p>
+  </article>
+  <article class="prose lg:prose-xl mx-auto my-8 px-4 bg-gray-800/50 p-6 rounded-lg">
+    <h1>Welcome to Travel Web</h1>
+    <p>Your gateway to exploring the world. Discover new destinations, plan your trips, and share your travel
+      experiences with our vibrant community.</p>
+    <h2>Explore Destinations</h2>
+    <p>Browse through a curated list of popular travel destinations, complete with guides, tips, and recommendations to
+      make your journey unforgettable.</p>
+    <h2>Plan Your Trip</h2>
+    <p>Use our trip planning tools to organize your itinerary, book accommodations, and find activities that suit your
+      interests.</p>
+    <h2>Join the Community</h2>
+    <p>Connect with fellow travelers, share your stories, and get inspired by the adventures of others in our community
+      forums.</p>
+  </article>
+  <article class="prose lg:prose-xl mx-auto my-8 px-4 bg-gray-800/50 p-6 rounded-lg">
+    <h1>Welcome to Travel Web</h1>
+    <p>Your gateway to exploring the world. Discover new destinations, plan your trips, and share your travel
+      experiences with our vibrant community.</p>
+    <h2>Explore Destinations</h2>
+    <p>Browse through a curated list of popular travel destinations, complete with guides, tips, and recommendations to
+      make your journey unforgettable.</p>
+    <h2>Plan Your Trip</h2>
+    <p>Use our trip planning tools to organize your itinerary, book accommodations, and find activities that suit your
+      interests.</p>
+    <h2>Join the Community</h2>
+    <p>Connect with fellow travelers, share your stories, and get inspired by the adventures of others in our community
+      forums.</p>
+  </article>
+
+  <footer class="bg-neutral-primary-soft">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <hr class="my-6 border-default sm:mx-auto lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <div class="flex mt-4 sm:justify-center sm:mt-0">
+          <a href="#" class="text-body hover:text-heading">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Facebook page</span>
+          </a>
+          <a href="#" class="text-body hover:text-heading ms-5">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.942 5.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.586 11.586 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3 17.392 17.392 0 0 0-2.868 11.662 15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.638 10.638 0 0 1-1.706-.83c.143-.106.283-.217.418-.331a11.664 11.664 0 0 0 10.118 0c.137.114.277.225.418.331-.544.328-1.116.606-1.71.832a12.58 12.58 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM8.678 14.813a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.929 1.929 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
+            </svg>
+            <span class="sr-only">Discord community</span>
+          </a>
+          <a href="#" class="text-body hover:text-heading ms-5">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z" />
+            </svg>
+            <span class="sr-only">Twitter page</span>
+          </a>
+          <a href="#" class="text-body hover:text-heading ms-5">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">GitHub account</span>
+          </a>
+          <a href="#" class="text-body hover:text-heading ms-5">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2a10 10 0 1 0 10 10A10.009 10.009 0 0 0 12 2Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.093 20.093 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM10 3.707a8.82 8.82 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.755 45.755 0 0 0 10 3.707Zm-6.358 6.555a8.57 8.57 0 0 1 4.73-5.981 53.99 53.99 0 0 1 3.168 4.941 32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.641 31.641 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM12 20.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 15.113 13a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Dribbble account</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 z-50
+         hidden items-center justify-center
+         w-12 h-12 rounded-full
+         bg-emerald-500 text-white
+         shadow-lg shadow-emerald-500/30
+         transition-all duration-300
+         hover:bg-emerald-600 hover:scale-110
+         active:scale-95">
+    ↑
+  </button>
+  <script>
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btn.classList.remove("hidden");
+        btn.classList.add("flex");
+      } else {
+        btn.classList.add("hidden");
+        btn.classList.remove("flex");
+      }
+    });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</body>
+
+</html>
