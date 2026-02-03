@@ -10,106 +10,51 @@
 </head>
 
 <body class="font-[Kanit]">
-  
-  <nav
-    class="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-16 items-center justify-between">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile menu button-->
-          <button type="button" command="--toggle" commandfor="mobile-menu"
-            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-              aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-              aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
-              <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex shrink-0 items-center">
-            <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"
-              class="h-8 w-auto" />
-          </div>
-          <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
-              <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <a href="#"
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
-              <a href="#"
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-              <a href="#"
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
-            </div>
-          </div>
-        </div>
-        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-          <el-menu anchor="bottom end" popover
-            class="w-48 origin-top-right rounded-md bg-gray-800 py-1 outline -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
-            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Your
-              profile</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Settings</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Sign
-              out</a>
-          </el-menu>
-          </el-dropdown>
-        </div>
-      </div>
+ <section class="relatve">
+  <!-- Container -->
+  <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+    <!-- Heading Div -->
+    <div class="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
+      <h1 class="mb-4 text-4xl font-semibold md:text-6xl">เส้นทางท่องเที่ยวเชิงอาหาร <span class="bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/6390526ac2a607693620c97b_Rectangle%2010.svg')] bg-cover bg-center px-4 text-white">อำเภอท่าฉาง</span>.</h1>
+      <p class="mx-auto mb-5 max-w-[528px] text-xl text-[#636262] lg:mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus</p>
     </div>
-
-    <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
-      <div class="space-y-1 px-2 pt-2 pb-3">
-        <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-        <a href="#" aria-current="page"
-          class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Dashboard</a>
-        <a href="#"
-          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
-        <a href="#"
-          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-        <a href="#"
-          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
-      </div>
-    </el-disclosure>
-  </nav>
+  </div>
+  <!-- BG Images -->
+  <img src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905b9f809b5c8180ce30c5_pattern-1.svg" alt="" class="absolute bottom-0 left-0 right-auto top-auto -z-10 inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto" />
+  <img src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905ba1538296b3f50a905e_pattern-2.svg" alt="" class="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block" />
+</section>
   <script type="module" src="/src/main.ts"></script>
 
   <header>
-    <h1 class="text-6xl font-bold text-center text-black drop-shadow-lg mt-4">
-  เส้นทางท่องเที่ยวเชิงอาหารอำเภอท่าฉาง
-</h1>
 
-<!-- container หลัก -->
-<div class="relative flex justify-center h-screen">
 
-  <!-- รูปแผนที่ -->
-  <img class="mx-auto object-contain" src="ท่าฉาง.png" alt="tasa">
+    <!-- container หลัก -->
+    <div class="relative flex justify-center h-screen">
 
-  <!-- pagination ลอยบนรูป -->
-  <div class="absolute bottom-16 left-1/2 -translate-x-1/2
+      <!-- รูปแผนที่ -->
+      <img class="mx-auto object-contain" src="ท่าฉาง.png" alt="tasa">
+
+      <!-- pagination ลอยบนรูป -->
+      <div class="absolute bottom-16 left-1/2 -translate-x-1/2
               flex gap-3
               bg-black/25 backdrop-blur-md
               px-5 py-3 rounded-full">
 
-    <button class="page-btn">1</button>
-    <button class="page-btn">2</button>
-    <button class="page-btn">3</button>
-    <button class="page-btn">4</button>
-    <button class="page-btn">5</button>
-    <button class="page-btn">6</button>
-    <button class="page-btn">7</button>
-    <button class="page-btn">8</button>
-    <button class="page-btn">9</button>
-    <button class="page-btn">10</button>
+        <button class="page-btn">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <button class="page-btn">5</button>
+        <button class="page-btn">6</button>
+        <button class="page-btn">7</button>
+        <button class="page-btn">8</button>
+        <button class="page-btn">9</button>
+        <button class="page-btn">10</button>
 
-  </div>
+      </div>
 
-</div>
+    </div>
 
   </header>
 
@@ -183,13 +128,57 @@
                   ที่ชาวท่าฉางตั้งใจอนุรักษ์ไว้ไม่ให้สูญหาย
                 </p>
               </div>
+              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-3">ปักหมุดร้านค้า</h2>
 
+                <label class="block text-sm text-slate-700 mb-2">
+                  ตำแหน่งที่ตั้งร้านค้าใน Google Maps
+                </label>
+
+                <div class="w-full h-[300px] rounded-xl overflow-hidden border border-slate-300">
+                  <iframe src="https://www.google.com/maps?q=9.3202722,99.0588743&z=17&output=embed"
+                    class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+
+                <a href="https://www.google.com/maps/place/9%C2%B019'13.0%22N+99%C2%B003'32.0%22E" target="_blank"
+                  class="inline-flex items-center gap-2 mt-3 text-sm text-blue-600 hover:underline">
+                  เปิดใน Google Maps
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900 mb-4">แกลเลอรี</h2>
+
+        <div class="relative overflow-hidden">
+          <!-- Slides -->
+          <div id="gallery-track" class="flex transition-transform duration-500 ease-out">
+            <img src="g1.jpg" class="w-full shrink-0 rounded-xl object-cover" />
+            <img src="g2.jpg" class="w-full shrink-0 rounded-xl object-cover" />
+            <img src="g3.jpg" class="w-full shrink-0 rounded-xl object-cover" />
+            <img src="g4.jpg" class="w-full shrink-0 rounded-xl object-cover" />
+          </div>
+
+          <!-- Prev -->
+          <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2
+      bg-white/80 hover:bg-white text-slate-700
+      w-10 h-10 rounded-full shadow flex items-center justify-center">
+            ‹
+          </button>
+
+          <!-- Next -->
+          <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2
+      bg-white/80 hover:bg-white text-slate-700
+      w-10 h-10 rounded-full shadow flex items-center justify-center">
+            ›
+          </button>
+        </div>
+      </div>
     </section>
-    
+
 
   </article>
 
@@ -341,65 +330,65 @@
     ↑
   </button>
 
-    <script>
-          const card = document.getElementById("parallax-card");
-          const img = document.getElementById("parallax-img");
-          const shine = document.getElementById("parallax-shine");
+  <script>
+    const card = document.getElementById("parallax-card");
+    const img = document.getElementById("parallax-img");
+    const shine = document.getElementById("parallax-shine");
 
-          const MAX_ROTATE = 10;   // degrees
-          const MAX_MOVE = 10;     // px (slight translate)
-          const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const MAX_ROTATE = 10;   // degrees
+    const MAX_MOVE = 10;     // px (slight translate)
+    const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-          function setTransform(px, py) {
-            if (REDUCED) return;
+    function setTransform(px, py) {
+      if (REDUCED) return;
 
-            // px,py in range [-1..1]
-            const rotY = px * MAX_ROTATE;
-            const rotX = -py * MAX_ROTATE;
-            const tx = px * MAX_MOVE;
-            const ty = py * MAX_MOVE;
+      // px,py in range [-1..1]
+      const rotY = px * MAX_ROTATE;
+      const rotX = -py * MAX_ROTATE;
+      const tx = px * MAX_MOVE;
+      const ty = py * MAX_MOVE;
 
-            img.style.transform =
-              `translate3d(${tx}px, ${ty}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.03)`;
+      img.style.transform =
+        `translate3d(${tx}px, ${ty}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.03)`;
 
-            // Shine follows pointer
-            const shineX = (px + 1) * 50; // 0..100
-            const shineY = (py + 1) * 50; // 0..100
-            shine.style.opacity = "1";
-            shine.style.background =
-              `radial-gradient(circle at ${shineX}% ${shineY}%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%)`;
-          }
+      // Shine follows pointer
+      const shineX = (px + 1) * 50; // 0..100
+      const shineY = (py + 1) * 50; // 0..100
+      shine.style.opacity = "1";
+      shine.style.background =
+        `radial-gradient(circle at ${shineX}% ${shineY}%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%)`;
+    }
 
-          function reset() {
-            img.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0) scale(1)";
-            shine.style.opacity = "0";
-          }
+    function reset() {
+      img.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0) scale(1)";
+      shine.style.opacity = "0";
+    }
 
-          // Mouse (PC)
-          card.addEventListener("mousemove", (e) => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width;  // 0..1
-            const y = (e.clientY - r.top) / r.height;  // 0..1
-            const px = (x - 0.5) * 2;                  // -1..1
-            const py = (y - 0.5) * 2;                  // -1..1
-            setTransform(px, py);
-          });
+    // Mouse (PC)
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;  // 0..1
+      const y = (e.clientY - r.top) / r.height;  // 0..1
+      const px = (x - 0.5) * 2;                  // -1..1
+      const py = (y - 0.5) * 2;                  // -1..1
+      setTransform(px, py);
+    });
 
-          card.addEventListener("mouseleave", reset);
+    card.addEventListener("mouseleave", reset);
 
-          // Touch (Mobile): tilt while finger moves
-          card.addEventListener("touchmove", (e) => {
-            const t = e.touches[0];
-            const r = card.getBoundingClientRect();
-            const x = (t.clientX - r.left) / r.width;
-            const y = (t.clientY - r.top) / r.height;
-            const px = (x - 0.5) * 2;
-            const py = (y - 0.5) * 2;
-            setTransform(px, py);
-          }, { passive: true });
+    // Touch (Mobile): tilt while finger moves
+    card.addEventListener("touchmove", (e) => {
+      const t = e.touches[0];
+      const r = card.getBoundingClientRect();
+      const x = (t.clientX - r.left) / r.width;
+      const y = (t.clientY - r.top) / r.height;
+      const px = (x - 0.5) * 2;
+      const py = (y - 0.5) * 2;
+      setTransform(px, py);
+    }, { passive: true });
 
-          card.addEventListener("touchend", reset);
-        </script>
+    card.addEventListener("touchend", reset);
+  </script>
   <script>
     const btn = document.getElementById("backToTop");
 
@@ -419,6 +408,25 @@
         behavior: "smooth"
       });
     });
+  </script>
+  <script>
+    const track = document.getElementById("gallery-track");
+    let index = 0;
+    const total = track.children.length;
+
+    function updateSlide() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % total;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + total) % total;
+      updateSlide();
+    }
   </script>
 </body>
 
