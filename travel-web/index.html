@@ -3,43 +3,128 @@
 
 <head>
   <meta charset="UTF-8" />
+
+  <!-- Kanit font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>travel-web</title>
 </head>
 
+
 <body class="font-[Kanit]">
 
- <section class="relatve">
-  <!-- Container -->
-  <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-    <!-- Heading Div -->
-    <div class="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
-      <h1 class="mb-4 text-4xl font-semibold md:text-6xl">เส้นทางท่องเที่ยวเชิงอาหาร <span class="bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/6390526ac2a607693620c97b_Rectangle%2010.svg')] bg-cover bg-center px-4 text-white">อำเภอท่าฉาง</span>.</h1>
-      <p class="mx-auto mb-5 max-w-[528px] text-xl text-[#636262] lg:mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus</p>
+  <section class="relative">
+    <div class="absolute inset-0 bg-white/70 backdrop-blur-sm md:hidden"></div>
+
+    <!-- Container -->
+
+    <div class="relative z-10 mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+
+      <!-- Heading Div -->
+      <div class="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
+        <h1 class="mb-4 text-4xl font-semibold md:text-6xl">เส้นทางท่องเที่ยวเชิงอาหาร <span
+            class="bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/6390526ac2a607693620c97b_Rectangle%2010.svg')] bg-cover bg-center px-4 text-white">อำเภอท่าฉาง</span>.
+        </h1>
+        <p class="mx-auto mb-5 max-w-[528px] text-xl text-[#636262] lg:mb-8">Tha Chang Gastronomy Tourism Route: A
+          Cultural and Unique Identity Project in Surat Thani.</p>
+      </div>
     </div>
-  </div>
-  <!-- BG Images -->
-  <img src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905b9f809b5c8180ce30c5_pattern-1.svg" alt="" class="absolute bottom-0 left-0 right-auto top-auto -z-10 inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto" />
-  <img src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905ba1538296b3f50a905e_pattern-2.svg" alt="" class="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block" />
-</section>
+    <!-- BG Images -->
+    <img src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905b9f809b5c8180ce30c5_pattern-1.svg" alt=""
+      class="absolute bottom-0 left-0 right-auto top-auto -z-10 inline-block md:bottom-1/2 md:left-0 md:right-auto md:top-auto" />
+    <img src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905ba1538296b3f50a905e_pattern-2.svg" alt=""
+      class="absolute bottom-auto left-auto right-0 top-0 -z-10 hidden sm:inline-block" />
+  </section>
   <script type="module" src="/src/main.ts"></script>
 
-  <header>
+  <header class="block">
 
 
     <!-- container หลัก -->
-    <div class="relative flex justify-center h-screen">
+    <!-- container หลัก -->
+    <div class="relative mx-auto max-w-7xl -mt-20 px-4">
+      <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl">
 
-      <!-- รูปแผนที่ -->
-      <img class="mx-auto object-contain" src="ท่าฉาง.png" alt="tasa">
+        <!-- blurred background -->
+        <img src="ท่าฉางmobile.png" alt="bg" class="absolute inset-0 w-full h-full
+             object-cover scale-110 blur-xl opacity-60" />
 
-      <!-- pagination ลอยบนรูป -->
-      <div class="absolute bottom-16 left-1/2 -translate-x-1/2
-              flex gap-3
-              bg-black/25 backdrop-blur-md
-              px-5 py-3 rounded-full">
+        <!-- desktop image -->
+        <img src="ท่าฉาง.png" alt="map" class="relative hidden md:block w-full object-contain max-h-[75vh]" />
+
+        <!-- mobile image -->
+        <img src="ท่าฉางmobile.png" alt="travel-mobile"
+          class="relative block md:hidden w-full object-cover max-h-[75vh]" />
+
+      </div>
+    </div>
+
+    <!-- pagination ลอยบนรูป -->
+
+    <!-- MOBILE ONLY: fixed bottom, scroll hint -->
+    <!-- MOBILE ONLY: fixed bottom pager + scroll hint -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-safe">
+      <div class="relative w-full px-3">
+
+        <!-- optional text hint -->
+        <div id="swipeHint"
+          class="pointer-events-none absolute -top-6 right-4 text-xs text-slate-400 opacity-0 transition-opacity duration-300">
+          swipe →
+        </div>
+
+        <!-- LEFT FADE + ARROW -->
+        <div id="pagerLeft" class="pointer-events-none absolute left-0 top-0 bottom-0 w-10
+         bg-gradient-to-r from-white/90 to-transparent
+         flex items-center justify-start pl-1
+         opacity-0 transition-opacity duration-200">
+          <span id="arrowLeft" class="text-slate-400 text-2xl">‹</span>
+        </div>
+
+        <!-- RIGHT FADE + ARROW -->
+        <div id="pagerRight" class="pointer-events-none absolute right-0 top-0 bottom-0 w-10
+         bg-gradient-to-l from-white/90 to-transparent
+         flex items-center justify-end pr-1
+         opacity-0 transition-opacity duration-200">
+          <span id="arrowRight" class="text-slate-400 text-2xl">›</span>
+        </div>
+
+        <!-- SCROLL AREA -->
+        <div id="pagerScroll" class="w-full overflow-x-auto">
+          <div class="inline-flex gap-2 min-w-max
+               bg-white/90 backdrop-blur
+               px-4 py-3 rounded-t-2xl
+               shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+            <button class="page-btn">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <button class="page-btn">6</button>
+            <button class="page-btn">7</button>
+            <button class="page-btn">8</button>
+            <button class="page-btn">9</button>
+            <button class="page-btn">10</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DESKTOP ONLY: normal centered pagination -->
+    <div class="hidden md:flex mt-8 justify-center">
+      <div class="
+      flex gap-2
+      bg-slate-100
+      px-4 py-3
+      rounded-2xl
+      shadow-sm
+    ">
 
         <button class="page-btn">1</button>
         <button class="page-btn">2</button>
@@ -51,9 +136,7 @@
         <button class="page-btn">8</button>
         <button class="page-btn">9</button>
         <button class="page-btn">10</button>
-
       </div>
-
     </div>
 
   </header>
@@ -61,10 +144,12 @@
   <article class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg">
     <section class="bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <div class="flex flex-col md:flex-row items-start gap-6 p-6">
-        <div id="parallax-card" class="relative w-full md:w-1/3 rounded-2xl overflow-hidden
+        <div id="parallax-card" class="relative z-20 w-full md:w-1/3 rounded-2xl overflow-visible
          [perspective:1000px] select-none">
           <img src="A-removebg-preview.png" alt="food" class="block w-full h-full object-cover
-           will-change-transform transition-transform duration-150" id="parallax-img" />
+         will-change-transform
+         transition-transform duration-150
+         [transform:translateZ(30px)]" id="parallax-img" />
 
           <!-- light/shine overlay -->
           <div id="parallax-shine"
@@ -104,11 +189,11 @@
               <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
                 <h2 class="text-lg font-bold text-slate-900 mb-3">จุดเด่น</h2>
                 <ul class="space-y-2 text-slate-700">
-                  <li>🌴 <span class="font-semibold text-slate-900">หัวโหนด</span> – ยอดตาลอ่อน วัตถุดิบล้ำค่าในท้องถิ่น
+                  <li>– ยอดตาลอ่อน วัตถุดิบล้ำค่าในท้องถิ่น
                   </li>
-                  <li>🌶️ <span class="font-semibold text-slate-900">เครื่องแกงตำมือ</span> – เข้มข้น ถึงพริกถึงแกง</li>
-                  <li>🔥 <span class="font-semibold text-slate-900">ปลากระเบนย่าง</span> – หอมฉุย เอกลักษณ์ชาวเล</li>
-                  <li>🍜 <span class="font-semibold text-slate-900">ยิ่งอุ่น ยิ่งหรอย</span> – กินคู่ขนมจีนเข้ากันดีนัก
+                  <li>– เข้มข้น ถึงพริกถึงแกง</li>
+                  <li>– หอมฉุย เอกลักษณ์ชาวเล</li>
+                  <li>– กินคู่ขนมจีนเข้ากันดีนัก
                   </li>
                 </ul>
               </div>
@@ -146,38 +231,181 @@
                   เปิดใน Google Maps
                 </a>
               </div>
+              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-3">ช่องทางการติดต่อ</h2>
+                <ul class="space-y-2 text-slate-700">
+                  <li>- บ้านเลขที่ 80/2 หมู่ที่ 2 ตำบลเวียง อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี
+                  </li>
+                  <li>- ชื่อร้าน แม่วรรณดี</li>
+                  <li>- หมายเลขโทรศัพท์ 063-080-9425 </li>
+                  <li>- Facebook: วรรณดี คงแก้ว
+                  </li>
+                  <li>- Line: 063-080-9425
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-        <h2 class="text-lg font-bold text-slate-900 mb-4">แกลเลอรี</h2>
+<div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+  <h2 class="text-lg font-bold text-slate-900 mb-4">แกลเลอรี</h2>
 
-        <div class="relative overflow-hidden">
-          <!-- Slides -->
-          <div id="gallery-track" class="flex transition-transform duration-500 ease-out">
-            <img src="g1.jpg" class="w-full shrink-0 rounded-xl object-cover" />
-            <img src="g2.jpg" class="w-full shrink-0 rounded-xl object-cover" />
-            <img src="g3.jpg" class="w-full shrink-0 rounded-xl object-cover" />
-            <img src="g4.jpg" class="w-full shrink-0 rounded-xl object-cover" />
+  <div class="gallery relative overflow-hidden">
+    <div class="gallery-track flex gap-3 transition-transform duration-500 ease-out will-change-transform">
+      <img src="A1.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="A2.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="A3.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="A4.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="A5.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="A6.png" class="gallery-item rounded-xl object-cover" alt="" />
+    </div>
+
+    <button type="button"
+      class="gallery-prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-700
+             w-10 h-10 rounded-full shadow flex items-center justify-center">
+      ‹
+    </button>
+
+    <button type="button"
+      class="gallery-next absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-700
+             w-10 h-10 rounded-full shadow flex items-center justify-center">
+      ›
+    </button>
+  </div>
+</div>
+    </section>
+    <section class="bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <div class="flex flex-col md:flex-row items-start gap-6 p-6">
+        <div id="parallax-card" class="relative z-20 w-full md:w-1/3 rounded-2xl overflow-visible
+         [perspective:1000px] select-none">
+          <img src="A-removebg-preview.png" alt="food" class="block w-full h-full object-cover
+         will-change-transform
+         transition-transform duration-150
+         [transform:translateZ(30px)]" id="parallax-img" />
+
+          <!-- light/shine overlay -->
+          <div id="parallax-shine"
+            class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-150"></div>
+        </div>
+
+        <div class="flex flex-col gap-6 flex-1 text-gray-200 leading-relaxed">
+          <!-- Title -->
+          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+            ขนมจั้ง
+          </h1>
+
+          <!-- Intro -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+
+            <!-- Section: Tagline -->
+            <div class="border-l-4 border-orange-400 pl-4">
+              <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="h-9 w-1 rounded-full bg-orange-500"></span>
+                  <h2 class="text-lg font-bold text-slate-900">คำโปรย</h2>
+                </div>
+                <p class="text-slate-700 italic">
+                  สืบสานสูตรโบราณ มัดด้วยเชือกกล้วยมันลา อร่อยล้ำค่าภูมิปัญญาชุมชน
+                </p>
+              </div>
+
+              <!-- Highlights card -->
+              <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-3">จุดเด่น</h2>
+                <ul class="space-y-2 text-slate-700">
+                  <li>– เนื้อข้าวเหนียวนุ่มเนียน
+                  </li>
+                  <li>– วัตถุดิบธรรมชาติ ปราศจากสารปรุงแต่ง</li>
+                  <li>– ทานเปล่าก็เพลิน ทานคู่กาแฟยิ่งฟิน</li>
+                  <li>– ทำสดใหม่ "ออเดอร์ต่อออเดอร์"
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Story card (กินเต็มแถวบนจอใหญ่) -->
+              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-3">เรื่องราวสินค้า</h2>
+                <p class="text-slate-700 leading-relaxed">
+                  จากตำนานความอร่อยที่สืบทอดจากรุ่นสู่รุ่น สู่ของดีคู่ประเพณีชักพระและสงกรานต์
+                  <span class="font-semibold text-slate-900">“ขนมจั้ง”</span>
+                  คือภูมิปัญญาพื้นบ้านอยู่คู่กับวิถีชีวิตของคนในชุมชนมายาวนาน
+                  เอกลักษณ์อยู่ที่เนื้อข้าวเหนียวคุณภาพเยี่ยมที่นึ่งจนนุ่มเนียนละลายเป็นเนื้อเดียวกัน มัดตรึงด้วย
+                  "เชือกกล้วยมันลา"
+                  วัสดุธรรมชาติที่สะท้อนเสน่ห์ดั้งเดิมและความใส่ใจ
+                  แม้ต้องสั่งทำล่วงหน้าเพราะเน้นความสดใหม่แบบออเดอร์ต่อออเดอร์
+                  แต่ปัจจุบันก็เข้าถึงง่ายด้วยบริการจัดส่งออนไลน์ที่เชื่อมรสชาติแห่งอดีตสู่มือคุณ
+                  <br /><br />
+                  ความพิเศษของขนมจั้งคือรสสัมผัสที่ทานเปล่าๆ คู่กาแฟก็อร่อยล้ำโดยไม่ต้องพึ่งน้ำผึ้ง
+                  หรือจะเปิดประสบการณ์ใหม่กับ <span
+                    class="font-semibold text-slate-900">"กาแฟจั้ง"</span>เมนูปั่นสุดสร้างสรรค์ที่ผสานความหนึบเข้ากับความหอมเข้มอย่างลงตัว
+                  จนกลายเป็นความอร่อยที่ใครได้ลิ้มลองต่างพูดเป็นเสียงเดียวกันว่า "แค่กิโลเดียว...ไม่เคยพอ"
+                  สำหรับรสชาติที่แสนประทับใจไม่รู้ลืม
+                </p>
+              </div>
+              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-3">ปักหมุดร้านค้า</h2>
+
+                <label class="block text-sm text-slate-700 mb-2">
+                  ตำแหน่งที่ตั้งร้านค้าใน Google Maps
+                </label>
+
+                <div class="w-full h-[300px] rounded-xl overflow-hidden border border-slate-300">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d31496.752115623378!2d99.1080566!3d9.3249374!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTknNDQuNSJOIDk5wrAwNic1Ni43IkU!5e0!3m2!1sth!2sth!4v1770594796707!5m2!1sth!2sth"
+                    class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+
+                <a href="https://www.google.com/maps/place/9%C2%B019'44.5%22N+99%C2%B006'56.7%22E/@9.3249374,99.1080566,14z/data=!4m4!3m3!8m2!3d9.32902!4d99.11575?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank" class="inline-flex items-center gap-2 mt-3 text-sm text-blue-600 hover:underline">
+                  เปิดใน Google Maps
+                </a>
+              </div>
+              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-3">ช่องทางการติดต่อ</h2>
+                <ul class="space-y-2 text-slate-700">
+                  <li>- บ้านเลขที่12 หมู่ที่ 3 ตำบลเสวียด อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี
+                  </li>
+                  <li>- ชื่อร้าน ขนมจั้งแม่ละม้าย</li>
+                  <li>- หมายเลขโทรศัพท์ 087-2781143</li>
+                </ul>
+              </div>
+            </div>
           </div>
-
-          <!-- Prev -->
-          <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2
-      bg-white/80 hover:bg-white text-slate-700
-      w-10 h-10 rounded-full shadow flex items-center justify-center">
-            ‹
-          </button>
-
-          <!-- Next -->
-          <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2
-      bg-white/80 hover:bg-white text-slate-700
-      w-10 h-10 rounded-full shadow flex items-center justify-center">
-            ›
-          </button>
         </div>
       </div>
+<div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
+  <h2 class="text-lg font-bold text-slate-900 mb-4">แกลเลอรี</h2>
+
+  <div class="gallery relative overflow-hidden">
+    <div class="gallery-track flex gap-3 transition-transform duration-500 ease-out will-change-transform">
+      <img src="B1.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="B2.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="B3.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="B4.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="B5.png" class="gallery-item rounded-xl object-cover" alt="" />
+      <img src="B6.png" class="gallery-item rounded-xl object-cover" alt="" />
+    </div>
+
+    <button type="button"
+      class="gallery-prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-700
+             w-10 h-10 rounded-full shadow flex items-center justify-center">
+      ‹
+    </button>
+
+    <button type="button"
+      class="gallery-next absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-700
+             w-10 h-10 rounded-full shadow flex items-center justify-center">
+      ›
+    </button>
+  </div>
+</div>
     </section>
+
+
+   
 
 
   </article>
@@ -409,24 +637,231 @@
       });
     });
   </script>
-  <script>
-    const track = document.getElementById("gallery-track");
+ <script>
+  function initGallery(root) {
+    const track = root.querySelector(".gallery-track");
+    const prevBtn = root.querySelector(".gallery-prev");
+    const nextBtn = root.querySelector(".gallery-next");
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const originalNodes = Array.from(track.children).map(n => n.cloneNode(true));
     let index = 0;
-    const total = track.children.length;
+    let clones = 0;
+    let step = 0;
+    let isMoving = false;
+    let autoTimer = null;
 
-    function updateSlide() {
-      track.style.transform = `translateX(-${index * 100}%)`;
+    function perView() {
+      if (window.matchMedia("(min-width: 1024px)").matches) return 4;
+      if (window.matchMedia("(min-width: 640px)").matches) return 2;
+      return 1;
     }
 
-    function nextSlide() {
-      index = (index + 1) % total;
-      updateSlide();
+    function getGapPx() {
+      const styles = getComputedStyle(track);
+      const g = styles.gap || styles.columnGap || "0px";
+      return parseFloat(g) || 0;
     }
 
-    function prevSlide() {
-      index = (index - 1 + total) % total;
-      updateSlide();
+    function calcStep() {
+      const first = track.querySelector(".gallery-item");
+      if (!first) return 0;
+      return first.getBoundingClientRect().width + getGapPx();
     }
+
+    function setTransform(noAnim = false) {
+      if (noAnim) track.style.transition = "none";
+      track.style.transform = `translateX(-${index * step}px)`;
+      if (noAnim) {
+        track.getBoundingClientRect(); // force reflow
+        track.style.transition = "";
+      }
+    }
+
+    function rebuild() {
+      // reset
+      track.innerHTML = "";
+      originalNodes.forEach(n => track.appendChild(n.cloneNode(true)));
+
+      const pv = perView();
+      clones = pv;
+
+      const items = Array.from(track.children);
+      const total = items.length;
+
+      // create clones
+      const headClones = items.slice(0, clones).map(el => el.cloneNode(true));
+      const tailClones = items.slice(total - clones).map(el => el.cloneNode(true));
+
+      track.innerHTML = "";
+      tailClones.forEach(n => track.appendChild(n));
+      items.forEach(n => track.appendChild(n));
+      headClones.forEach(n => track.appendChild(n));
+
+      index = clones;
+
+      // IMPORTANT: calculate step after layout
+      step = calcStep();
+      setTransform(true);
+    }
+
+    function moveNext() {
+      if (isMoving || step === 0) return;
+      isMoving = true;
+      index += 1;
+      setTransform(false);
+    }
+
+    function movePrev() {
+      if (isMoving || step === 0) return;
+      isMoving = true;
+      index -= 1;
+      setTransform(false);
+    }
+
+    nextBtn.addEventListener("click", (e) => { e.preventDefault(); moveNext(); });
+    prevBtn.addEventListener("click", (e) => { e.preventDefault(); movePrev(); });
+
+    track.addEventListener("transitionend", () => {
+      const pv = perView();
+      const realCount = track.children.length - (2 * pv);
+      const firstReal = pv;
+      const lastReal = pv + realCount - 1;
+
+      if (index > lastReal) {
+        index = firstReal;
+        setTransform(true);
+      } else if (index < firstReal) {
+        index = lastReal;
+        setTransform(true);
+      }
+
+      isMoving = false;
+    });
+
+    function startAuto(ms = 3500) {
+      stopAuto();
+      autoTimer = setInterval(moveNext, ms);
+    }
+    function stopAuto() {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = null;
+    }
+
+    root.addEventListener("mouseenter", stopAuto);
+    root.addEventListener("mouseleave", () => startAuto(3500));
+
+    // init AFTER images load so widths aren't 0
+    const imgs = Array.from(root.querySelectorAll("img"));
+    let pending = imgs.length;
+
+    function ready() {
+      rebuild();
+      startAuto(3500);
+    }
+
+    if (pending === 0) {
+      requestAnimationFrame(ready);
+    } else {
+      imgs.forEach(img => {
+        if (img.complete) {
+          pending--;
+        } else {
+          img.addEventListener("load", () => {
+            pending--;
+            if (pending === 0) ready();
+          }, { once: true });
+          img.addEventListener("error", () => {
+            pending--;
+            if (pending === 0) ready();
+          }, { once: true });
+        }
+      });
+      if (pending === 0) ready();
+    }
+
+    return { rebuild };
+  }
+
+  const galleries = Array.from(document.querySelectorAll(".gallery"));
+  const galleryControllers = galleries.map(initGallery);
+
+  window.addEventListener("resize", () => {
+    galleryControllers.forEach(c => c && c.rebuild());
+  });
+</script>
+
+
+  <script>
+    const scroller = document.getElementById("pagerScroll");
+    const leftHint = document.getElementById("pagerLeft");
+    const rightHint = document.getElementById("pagerRight");
+    const arrowLeft = document.getElementById("arrowLeft");
+    const arrowRight = document.getElementById("arrowRight");
+
+    let userInteracted = false;
+
+    function updatePagerHints() {
+      if (!scroller) return;
+
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      const x = scroller.scrollLeft;
+
+      // If no overflow, hide both
+      if (maxScroll <= 1) {
+        leftHint.style.opacity = "0";
+        rightHint.style.opacity = "0";
+        arrowLeft.classList.remove("nudge-left");
+        arrowRight.classList.remove("nudge-right");
+        return;
+      }
+
+      const canScrollLeft = x > 6;
+      const canScrollRight = x < maxScroll - 6;
+
+      // show/hide fades
+      leftHint.style.opacity = canScrollLeft ? "1" : "0";
+      rightHint.style.opacity = canScrollRight ? "1" : "0";
+
+      // animate arrows only when:
+      // - there is more content in that direction
+      // - and user hasn't interacted yet (optional UX)
+      if (!userInteracted && canScrollRight) {
+        arrowRight.classList.add("nudge-right");
+      } else {
+        arrowRight.classList.remove("nudge-right");
+      }
+
+      if (!userInteracted && canScrollLeft) {
+        arrowLeft.classList.add("nudge-left");
+      } else {
+        arrowLeft.classList.remove("nudge-left");
+      }
+
+      // If user reaches far right, stop right animation anyway
+      if (!canScrollRight) arrowRight.classList.remove("nudge-right");
+      if (!canScrollLeft) arrowLeft.classList.remove("nudge-left");
+    }
+
+    function markInteracted() {
+      userInteracted = true;
+      arrowLeft.classList.remove("nudge-left");
+      arrowRight.classList.remove("nudge-right");
+    }
+
+    if (scroller) {
+      scroller.addEventListener("scroll", () => {
+        markInteracted();
+        updatePagerHints();
+      }, { passive: true });
+
+      scroller.addEventListener("touchstart", markInteracted, { passive: true });
+      scroller.addEventListener("wheel", markInteracted, { passive: true });
+    }
+
+    window.addEventListener("resize", updatePagerHints);
+
+    updatePagerHints();
   </script>
 </body>
 
