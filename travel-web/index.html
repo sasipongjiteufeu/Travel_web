@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -95,20 +95,10 @@
 
         <!-- SCROLL AREA -->
         <div id="pagerScroll" class="w-full overflow-x-auto">
-          <div class="inline-flex gap-2 min-w-max
+          <div id="pagerButtonsMobile" class="inline-flex gap-2 min-w-max
                bg-white/90 backdrop-blur
                px-4 py-3 rounded-t-2xl
                shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
-            <button class="page-btn">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <button class="page-btn">4</button>
-            <button class="page-btn">5</button>
-            <button class="page-btn">6</button>
-            <button class="page-btn">7</button>
-            <button class="page-btn">8</button>
-            <button class="page-btn">9</button>
-            <button class="page-btn">10</button>
           </div>
         </div>
 
@@ -117,286 +107,19 @@
 
     <!-- DESKTOP ONLY: normal centered pagination -->
     <div class="hidden md:flex mt-8 justify-center">
-      <div class="
+      <div id="pagerButtonsDesktop" class="
       flex gap-2
       bg-slate-100
       px-4 py-3
       rounded-2xl
       shadow-sm
     ">
-
-        <button class="page-btn">1</button>
-        <button class="page-btn">2</button>
-        <button class="page-btn">3</button>
-        <button class="page-btn">4</button>
-        <button class="page-btn">5</button>
-        <button class="page-btn">6</button>
-        <button class="page-btn">7</button>
-        <button class="page-btn">8</button>
-        <button class="page-btn">9</button>
-        <button class="page-btn">10</button>
       </div>
     </div>
 
   </header>
 
-  <article class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg">
-    <section class="bg-gradient-to-br from-slate-50 via-white to-slate-100">
-
-  <div class="mx-auto w-full max-w-[1800px] px-6 py-12">
-
-    <div class="grid grid-cols-1 md:grid-cols-[300px_1fr_300px] gap-8 items-start md:items-stretch">
-
-      <!-- LEFT IMAGES -->
-      <div class="grid grid-rows-3 gap-3 md:h-full">
-        <img src="A1.png" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="">
-        <img src="A2.png" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="">
-        <img src="A3.png" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="">
-      </div>
-
-      <!-- CENTER CONTENT -->
-      <div class="flex flex-col gap-6 w-full text-gray-200 leading-relaxed">
-
-        <!-- Title -->
-        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-          แกงคั่วหัวโหนดปลากระเบนย่าง
-        </h1>
-
-        <!-- Intro -->
-        <p class="text-2xl mt-3 text-slate-700 leading-relaxed">
-          แกงหัวโหนดปลาเบนย่าง อาหารถิ่นกว่า 3 ชั่วอายุคน สูตรเด็ด อำเภอท่าฉาง
-          ขอเชิญชวนร่วมโหวตเมนูอาหารถิ่นของจังหวัดสุราษฎร์ธานี
-          <span class="italic text-base text-slate-500 block mt-1">
-            “รสชาติ...ที่หายไป – The Lost Taste” ปีงบประมาณ 2568
-          </span> 
-        </p>
-
-        <div class="grid grid-cols-1 gap-5">
-
-          <div class="border-l-4 border-orange-400 pl-4">
-
-            <!-- Tagline -->
-            <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="inline-block h-9 w-1 rounded-full bg-orange-500"></span>
-                <h2 class="text-2xl font-bold text-slate-900">คำโปรย</h2>
-              </div>
-              <p class="text-lg text-slate-700 italic">
-                กะทิแตกมัน หอมควันปลาย่าง รสชาติแห่งตำนาน
-              </p>
-            </div>
-
-            <!-- Highlights -->
-            <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="inline-block h-9 w-1 rounded-full bg-orange-500"></span>
-                <h2 class="text-2xl font-bold text-slate-900">จุดเด่น</h2>
-              </div>
-              <ul class="space-y-2 text-slate-700">
-                <li>– ยอดตาลอ่อน วัตถุดิบล้ำค่าในท้องถิ่น</li>
-                <li>– เข้มข้น ถึงพริกถึงแกง</li>
-                <li>– หอมฉุย เอกลักษณ์ชาวเล</li>
-                <li>– กินคู่ขนมจีนเข้ากันดีนัก</li>
-              </ul>
-            </div>
-
-            <!-- Story -->
-            <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="inline-block h-9 w-1 rounded-full bg-orange-500"></span>
-                <h2 class="text-2xl font-bold text-slate-900">เรื่องราวสินค้า</h2>
-              </div>
-
-              <p class="text-slate-700 leading-relaxed">
-                จากเสียงคลื่นลมและวิถีชีวิตชาวเล สู่ตำนานความอร่อยที่หาทานได้ยาก
-                <span class="font-semibold text-slate-900">“แกงหัวโหนดปลากระเบนย่าง”</span>
-                คือมรดกทางรสชาติแห่งท่าฉางที่สืบทอดผ่านกาลเวลา
-                ความโดดเด่นอยู่ที่การนำปลากระเบนจากท้องทะเลมาย่างไฟให้ส่งกลิ่นหอมฉุย
-                ผสานกับหัวโหนด (ยอดอ่อนตาลโตนด) เคี่ยวกับเครื่องแกงกะทิตำมือรสเข้มข้นตามฉบับปักษ์ใต้แท้
-                <br /><br />
-                เมนูนี้เคยเป็นศูนย์รวมใจในงานบุญและมื้ออาหารครอบครัว ยิ่งอุ่นยิ่งอร่อย
-                กินคู่ข้าวสวยร้อน ๆ หรือขนมจีน ไม่ใช่แค่อาหาร แต่คือการสัมผัสรากเหง้าและความทรงจำ
-                ที่ชาวท่าฉางตั้งใจอนุรักษ์ไว้ไม่ให้สูญหาย
-              </p>
-            </div>
-
-            <!-- Google Map -->
-            <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="inline-block h-9 w-1 rounded-full bg-orange-500"></span>
-                <h2 class="text-2xl font-bold text-slate-900">ปักหมุดร้านค้า</h2>
-              </div>
-
-              <label class="block text-sm text-slate-700 mb-2">
-                ตำแหน่งที่ตั้งร้านค้าใน Google Maps
-              </label>
-
-              <div class="w-full h-[300px] rounded-xl overflow-hidden border border-slate-300">
-                <iframe src="https://www.google.com/maps?q=9.3202722,99.0588743&z=17&output=embed"
-                  class="w-full h-full border-0" loading="lazy">
-                </iframe>
-              </div>
-
-              <a href="https://www.google.com/maps/place/9%C2%B019'13.0%22N+99%C2%B003'32.0%22E"
-                target="_blank"
-                class="inline-flex items-center gap-2 mt-3 text-sm text-blue-600 hover:underline">
-                เปิดใน Google Maps
-              </a>
-            </div>
-
-            <!-- Contact -->
-            <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="inline-block h-9 w-1 rounded-full bg-orange-500"></span>
-                <h2 class="text-2xl font-bold text-slate-900">ช่องทางการติดต่อ</h2>
-              </div>
-
-              <ul class="space-y-2 text-slate-700">
-                <li>- บ้านเลขที่ 80/2 หมู่ที่ 2 ตำบลเวียง อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี</li>
-                <li>- ชื่อร้าน แม่วรรณดี</li>
-                <li>- หมายเลขโทรศัพท์ 063-080-9425</li>
-                <li>- Facebook: วรรณดี คงแก้ว</li>
-                <li>- Line: 063-080-9425</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT IMAGES -->
-      <div class="grid grid-rows-3 gap-3 md:h-full">
-        <img src="A4.png" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="">
-        <img src="A5.png" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="">
-        <img src="A6.png" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="">
-      </div>
-
-    </div>
-  </div>
-</section>
-    <section class="bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      <div class="flex flex-col md:flex-row items-start gap-6 p-6">
-        <div id="parallax-card" class="relative z-20 w-full md:w-1/3 rounded-2xl overflow-visible
-         [perspective:1000px] select-none">
-          <img src="A-removebg-preview.png" alt="food" class="block w-full h-full object-cover
-         will-change-transform
-         transition-transform duration-150
-         [transform:translateZ(30px)]" id="parallax-img" />
-
-          <!-- light/shine overlay -->
-          <div id="parallax-shine"
-            class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-150"></div>
-        </div>
-
-        <div class="flex flex-col gap-6 w-full text-gray-200 leading-relaxed">
-          <!-- Title -->
-          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-            ขนมจั้ง
-          </h1>
-
-          <!-- Intro -->
-          <div class="grid grid-cols-1 gap-5">
-
-
-            <!-- Section: Tagline -->
-            <div class="border-l-4 border-orange-400 pl-4">
-              <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-                <div class="flex items-center gap-3 mb-2">
-                  <span class="inline-block h-9 w-1 rounded-full bg-orange-500"></span>
-                  <h2 class="text-lg font-bold text-slate-900">คำโปรย</h2>
-                </div>
-                <p class="text-slate-700 italic">
-                  สืบสานสูตรโบราณ มัดด้วยเชือกกล้วยมันลา อร่อยล้ำค่าภูมิปัญญาชุมชน
-                </p>
-              </div>
-
-              <!-- Highlights card -->
-              <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-                <h2 class="text-lg font-bold text-slate-900 mb-3">จุดเด่น</h2>
-                <ul class="space-y-2 text-slate-700">
-                  <li>– เนื้อข้าวเหนียวนุ่มเนียน
-                  </li>
-                  <li>– วัตถุดิบธรรมชาติ ปราศจากสารปรุงแต่ง</li>
-                  <li>– ทานเปล่าก็เพลิน ทานคู่กาแฟยิ่งฟิน</li>
-                  <li>– ทำสดใหม่ "ออเดอร์ต่อออเดอร์"
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Story card (กินเต็มแถวบนจอใหญ่) -->
-              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-                <h2 class="text-lg font-bold text-slate-900 mb-3">เรื่องราวสินค้า</h2>
-                <p class="text-slate-700 leading-relaxed">
-                  จากตำนานความอร่อยที่สืบทอดจากรุ่นสู่รุ่น สู่ของดีคู่ประเพณีชักพระและสงกรานต์
-                  <span class="font-semibold text-slate-900">“ขนมจั้ง”</span>
-                  คือภูมิปัญญาพื้นบ้านอยู่คู่กับวิถีชีวิตของคนในชุมชนมายาวนาน
-                  เอกลักษณ์อยู่ที่เนื้อข้าวเหนียวคุณภาพเยี่ยมที่นึ่งจนนุ่มเนียนละลายเป็นเนื้อเดียวกัน มัดตรึงด้วย
-                  "เชือกกล้วยมันลา"
-                  วัสดุธรรมชาติที่สะท้อนเสน่ห์ดั้งเดิมและความใส่ใจ
-                  แม้ต้องสั่งทำล่วงหน้าเพราะเน้นความสดใหม่แบบออเดอร์ต่อออเดอร์
-                  แต่ปัจจุบันก็เข้าถึงง่ายด้วยบริการจัดส่งออนไลน์ที่เชื่อมรสชาติแห่งอดีตสู่มือคุณ
-                  <br /><br />
-                  ความพิเศษของขนมจั้งคือรสสัมผัสที่ทานเปล่าๆ คู่กาแฟก็อร่อยล้ำโดยไม่ต้องพึ่งน้ำผึ้ง
-                  หรือจะเปิดประสบการณ์ใหม่กับ <span
-                    class="font-semibold text-slate-900">"กาแฟจั้ง"</span>เมนูปั่นสุดสร้างสรรค์ที่ผสานความหนึบเข้ากับความหอมเข้มอย่างลงตัว
-                  จนกลายเป็นความอร่อยที่ใครได้ลิ้มลองต่างพูดเป็นเสียงเดียวกันว่า "แค่กิโลเดียว...ไม่เคยพอ"
-                  สำหรับรสชาติที่แสนประทับใจไม่รู้ลืม
-                </p>
-              </div>
-              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-                <h2 class="text-lg font-bold text-slate-900 mb-3">ปักหมุดร้านค้า</h2>
-
-                <label class="block text-sm text-slate-700 mb-2">
-                  ตำแหน่งที่ตั้งร้านค้าใน Google Maps
-                </label>
-
-                <div class="w-full h-[300px] rounded-xl overflow-hidden border border-slate-300">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d31496.752115623378!2d99.1080566!3d9.3249374!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTknNDQuNSJOIDk5wrAwNic1Ni43IkU!5e0!3m2!1sth!2sth!4v1770594796707!5m2!1sth!2sth"
-                    class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                  </iframe>
-                </div>
-
-                <a href="https://www.google.com/maps/place/9%C2%B019'44.5%22N+99%C2%B006'56.7%22E/@9.3249374,99.1080566,14z/data=!4m4!3m3!8m2!3d9.32902!4d99.11575?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank" class="inline-flex items-center gap-2 mt-3 text-sm text-blue-600 hover:underline">
-                  เปิดใน Google Maps
-                </a>
-              </div>
-              <div class="lg:col-span-2 rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-                <h2 class="text-lg font-bold text-slate-900 mb-3">ช่องทางการติดต่อ</h2>
-                <ul class="space-y-2 text-slate-700">
-                  <li>- บ้านเลขที่12 หมู่ที่ 3 ตำบลเสวียด อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี
-                  </li>
-                  <li>- ชื่อร้าน ขนมจั้งแม่ละม้าย</li>
-                  <li>- หมายเลขโทรศัพท์ 087-2781143</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-<div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-5 shadow-sm">
-  <h2 class="text-lg font-bold text-slate-900 mb-4">แกลเลอรี</h2>
-
-  <div class="gallery relative overflow-hidden">
-    <div class="gallery-track flex gap-3 transition-transform duration-500 ease-out will-change-transform">
-      <img src="B1.png" class="gallery-item rounded-xl object-cover" alt="" />
-      <img src="B2.png" class="gallery-item rounded-xl object-cover" alt="" />
-      <img src="B3.png" class="gallery-item rounded-xl object-cover" alt="" />
-      <img src="B4.png" class="gallery-item rounded-xl object-cover" alt="" />
-      <img src="B5.png" class="gallery-item rounded-xl object-cover" alt="" />
-      <img src="B6.png" class="gallery-item rounded-xl object-cover" alt="" />
-    </div>
-
-  </div>
-</div>
-    </section>
-
-
-   
-
-
-  </article>
+  <article id="foodSections" class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg"></article>
 
 
 
@@ -463,65 +186,6 @@
     ↑
   </button>
 
-  <script>
-    const card = document.getElementById("parallax-card");
-    const img = document.getElementById("parallax-img");
-    const shine = document.getElementById("parallax-shine");
-
-    const MAX_ROTATE = 10;   // degrees
-    const MAX_MOVE = 10;     // px (slight translate)
-    const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    function setTransform(px, py) {
-      if (REDUCED) return;
-
-      // px,py in range [-1..1]
-      const rotY = px * MAX_ROTATE;
-      const rotX = -py * MAX_ROTATE;
-      const tx = px * MAX_MOVE;
-      const ty = py * MAX_MOVE;
-
-      img.style.transform =
-        `translate3d(${tx}px, ${ty}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.03)`;
-
-      // Shine follows pointer
-      const shineX = (px + 1) * 50; // 0..100
-      const shineY = (py + 1) * 50; // 0..100
-      shine.style.opacity = "1";
-      shine.style.background =
-        `radial-gradient(circle at ${shineX}% ${shineY}%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%)`;
-    }
-
-    function reset() {
-      img.style.transform = "translate3d(0,0,0) rotateX(0) rotateY(0) scale(1)";
-      shine.style.opacity = "0";
-    }
-
-    // Mouse (PC)
-    card.addEventListener("mousemove", (e) => {
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width;  // 0..1
-      const y = (e.clientY - r.top) / r.height;  // 0..1
-      const px = (x - 0.5) * 2;                  // -1..1
-      const py = (y - 0.5) * 2;                  // -1..1
-      setTransform(px, py);
-    });
-
-    card.addEventListener("mouseleave", reset);
-
-    // Touch (Mobile): tilt while finger moves
-    card.addEventListener("touchmove", (e) => {
-      const t = e.touches[0];
-      const r = card.getBoundingClientRect();
-      const x = (t.clientX - r.left) / r.width;
-      const y = (t.clientY - r.top) / r.height;
-      const px = (x - 0.5) * 2;
-      const py = (y - 0.5) * 2;
-      setTransform(px, py);
-    }, { passive: true });
-
-    card.addEventListener("touchend", reset);
-  </script>
   <script>
     const btn = document.getElementById("backToTop");
 
@@ -619,5 +283,7 @@
 </body>
 
 </html>
+
+
 
 

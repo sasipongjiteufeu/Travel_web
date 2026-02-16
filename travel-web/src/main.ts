@@ -64,7 +64,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน ขนมจั้งแม่ละม้าย",
       "หมายเลขโทรศัพท์ 087-2781143",
     ],
-    mapQuery: "บ้านเลขที่ 12 หมู่ที่ 3 ตำบลเสวียด อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3937.047939395954!2d99.11574999999999!3d9.32902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTknNDQuNSJOIDk5wrAwNic1Ni43IkU!5e0!3m2!1sth!2sth!4v1770913718881!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/hXQZ321T2ro2VQ3z7",
     images: ["B1.png", "B2.png", "B3.png", "B4.png", "B5.png", "B6.png"],
   },
   {
@@ -87,7 +88,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน แกงไตปลาเตาถ่านยายแอ๋ม",
       "หมายเลขโทรศัพท์ 093-5923628",
     ],
-    mapQuery: "บ้านเลขที่ 105/4 หมู่ที่ 6 ตำบลเสวียด อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+     mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3936.9775909755463!2d99.14582971223902!3d9.335249990700186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMjAnMDYuOSJOIDk5wrAwOCc1NC4zIkU!5e0!3m2!1sth!2sth!4v1770914759085!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/BEwG9WNbKgAc1BfZ6",
     images: ["C1.png", "C2.jpg", "C3.png", "C4.png", "C5.png", "C6.png"],
   },
   {
@@ -112,7 +114,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน ร้านเครื่องแกงแม่เพ็ญบ้านหนองดูน",
       "หมายเลขโทรศัพท์ 061-2253809",
     ],
-    mapQuery: "บ้านเลขที่ 4 หมู่ที่ 5 ตำบลเขาถ่าน อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+     mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3937.3876202356178!2d99.15678372586228!3d9.298879966911374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTcnNTYuMCJOIDk5wrAwOSc0Mi4wIkU!5e0!3m2!1sth!2sth!4v1770914865797!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/qj4mLcJbEKTg924u6",
     images: ["D1.png", "D2.png", "D3.png", "D4.png", "D5.png", "D6.png"],
   },
   {
@@ -135,7 +138,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน กำลังอัปเดต",
       "หมายเลขโทรศัพท์ กำลังอัปเดต",
     ],
-    mapQuery: "อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3937.5608710932734!2d99.17470971223862!3d9.28346999074997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTcnMDAuNSJOIDk5wrAxMCczOC4yIkU!5e0!3m2!1sth!2sth!4v1770914984663!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/wcJ3ps4B4hV5X8rK8",
     images: ["E1.png", "E2.png", "E3.png", "E4.png", "E5.png", "E6.png"],
   },
   {
@@ -157,7 +161,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน กลุ่มวิสาหกิจชุมชนท่องเที่ยวเชิงนิเวศท่าฉาง",
       "หมายเลขโทรศัพท์ 061-2253809",
     ],
-    mapQuery: "บ้านเลขที่ 3/2 หมู่ 6 ตำบลเขาถ่าน อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3937.48998826064!2d99.2032222!3d9.2897778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTcnMjMuMiJOIDk5wrAxMicxMS42IkU!5e0!3m2!1sth!2sth!4v1770915680422!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/AuHi5Lsr4wzE5V9v7",
     images: ["F1.png", "F2.png", "F3.png", "F4.png", "F5.png", "F6.jpg"],
   },
   {
@@ -180,7 +185,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน ขนมไข่บ้านคลองขุด",
       "หมายเลขโทรศัพท์ 089-0373269",
     ],
-    mapQuery: "หมู่ 6 ตำบลเวียง อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+     mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3937.971827061627!2d99.18204971220169!3d9.246815285499839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTQnNDguNSJOIDk5wrAxMScwNC43IkU!5e0!3m2!1sth!2sth!4v1770915847792!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/3n3nevWmBC3cFbBA7",
     images: ["G1.png", "G2.png", "G3.png", "G4.png", "G5.png", "G6.png"],
   },
   {
@@ -204,7 +210,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน ทวีสุขถั่วกรอบแก้ว",
       "หมายเลขโทรศัพท์ 083-550-6602",
     ],
-    mapQuery: "125 หมู่ 5 ตำบลท่าฉาง อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+     mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3937.983522797123!2d99.18141507612008!3d9.245769990824492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTQnNDQuOCJOIDk5wrAxMScwMi40IkU!5e0!3m2!1sth!2sth!4v1770916044556!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/KqBv7ZsowSaYhG4m8",
     images: ["H1.png", "H2.png", "H3.png", "H4.png", "H5.png", "H6.png"],
   },
   {
@@ -228,7 +235,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน ขนมกรุบผู้ใหญ่แหวง",
       "หมายเลขโทรศัพท์ กำลังอัปเดต",
     ],
-    mapQuery: "92 หมู่ 3 ตำบลท่าเคย อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+     mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3938.2677651964837!2d99.16686507611988!3d9.220329990848898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTMnMTMuMiJOIDk5wrAxMCcxMC4wIkU!5e0!3m2!1sth!2sth!4v1770916159670!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/RApgUBgXwZzcEdUn6",
     images: ["I1.png", "I2.png", "I3.png", "I4.png", "I5.png", "I6.png"],
   },
   {
@@ -252,7 +260,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน กลุ่มสบู่ลูกตาลใยไหม",
       "หมายเลขโทรศัพท์ 089-006-3462",
     ],
-    mapQuery: "หมู่ 1 บ้านคลองหอ ตำบลคลองไทร อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+     mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7978.553653936707!2d99.16131523588267!3d9.208709265456546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTInMzIuNyJOIDk5wrAwOSc0NS4yIkU!5e0!3m2!1sth!2sth!4v1770916228784!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/Y4tjV3CSsmG1YS6w6",
     images: ["J1.png", "J2.jpg", "J3.png", "J4.png", "J5.png", "J6.png"],
   },
   {
@@ -276,7 +285,8 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "ชื่อร้าน ร้านเครื่องแกงแม่เพ็ญบ้านหนองดูน",
       "หมายเลขโทรศัพท์ 061-225-3809",
     ],
-    mapQuery: "บ้านเลขที่ 4 หมู่ที่ 5 ตำบลเขาถ่าน อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3937.047939395954!2d99.11574999999999!3d9.32902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTknNDQuNSJOIDk5wrAwNic1Ni43IkU!5e0!3m2!1sth!2sth!4v1770913718881!5m2!1sth!2sth",
+    mapLink: "https://maps.app.goo.gl/hXQZ321T2ro2VQ3z7",
     images: ["K1.png", "K2.png", "K3.png", "K4.png", "K5.png", "K6.png"],
   },
 ];
