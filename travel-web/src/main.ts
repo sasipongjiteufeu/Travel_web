@@ -337,14 +337,48 @@ const renderFoodSection = (item: FoodItem, index: number): string => {
       ? item.contacts.map((contact) => `<li>- ${escapeHtml(contact)}</li>`).join("")
       : "<li>- กำลังอัปเดตข้อมูล</li>";
 
+  const mobileGalleryHtml = item.images
+    .map(
+      (image, imageIndex) =>
+        `<img src="/${image}" data-gallery-slide class="h-[280px] w-full shrink-0 snap-start object-cover rounded-xl" alt="${escapeHtml(item.title)} ${imageIndex + 1}">`,
+    )
+    .join("");
+  const mobileGalleryDotsHtml = item.images
+    .map(
+      (_, imageIndex) =>
+        `<button type="button" class="gallery-dot ${imageIndex === 0 ? "gallery-dot-active" : ""}" data-gallery-dot data-gallery-index="${imageIndex}" aria-label="Go to image ${imageIndex + 1}" aria-current="${imageIndex === 0 ? "true" : "false"}"></button>`,
+    )
+    .join("");
+  const leftGalleryHtml = item.images
+    .slice(0, 3)
+    .map(
+      (image, imageIndex) =>
+        `<img src="/${image}" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="${escapeHtml(item.title)} ${imageIndex + 1}">`,
+    )
+    .join("");
+  const rightGalleryHtml = item.images
+    .slice(3)
+    .map(
+      (image, imageIndex) =>
+        `<img src="/${image}" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="${escapeHtml(item.title)} ${imageIndex + 4}">`,
+    )
+    .join("");
+
   return `
     <section id="${sectionId}" data-food-section data-food-index="${index}" class="bg-gradient-to-br from-slate-50 via-white to-slate-100 ${index > 0 ? "border-t border-slate-200/70" : ""}">
       <div class="mx-auto w-full max-w-[1800px] px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-[300px_1fr_300px] gap-8 items-start md:items-stretch">
-          <div class="grid grid-rows-3 gap-3 md:h-full">
-            <img src="/${item.images[0]}" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="${escapeHtml(item.title)} 1">
-            <img src="/${item.images[1]}" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="${escapeHtml(item.title)} 2">
-            <img src="/${item.images[2]}" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="${escapeHtml(item.title)} 3">
+          <div class="md:hidden">
+            <div class="mobile-gallery flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2" data-mobile-gallery>
+              ${mobileGalleryHtml}
+            </div>
+            <div class="mt-3 flex items-center justify-center gap-2" data-mobile-gallery-dots>
+              ${mobileGalleryDotsHtml}
+            </div>
+          </div>
+
+          <div class="hidden md:grid grid-rows-3 gap-3 md:h-full">
+            ${leftGalleryHtml}
           </div>
 
           <div class="flex flex-col gap-6 w-full text-gray-200 leading-relaxed">
@@ -416,15 +450,97 @@ const renderFoodSection = (item: FoodItem, index: number): string => {
             </div>
           </div>
 
-          <div class="grid grid-rows-3 gap-3 md:h-full">
-            <img src="/${item.images[3]}" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="${escapeHtml(item.title)} 4">
-            <img src="/${item.images[4]}" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="${escapeHtml(item.title)} 5">
-            <img src="/${item.images[5]}" class="w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-xl" alt="${escapeHtml(item.title)} 6">
+          <div class="hidden md:grid grid-rows-3 gap-3 md:h-full">
+            ${rightGalleryHtml}
           </div>
         </div>
       </div>
     </section>
   `;
+};
+
+const setActiveGalleryDot = (
+  dotButtons: NodeListOf<HTMLButtonElement>,
+  activeIndex: number,
+): void => {
+  dotButtons.forEach((dotButton, dotIndex) => {
+    const isActive = dotIndex === activeIndex;
+    dotButton.classList.toggle("gallery-dot-active", isActive);
+    dotButton.setAttribute("aria-current", isActive ? "true" : "false");
+  });
+};
+
+const buildMobileGalleries = (): void => {
+  const gallerySections = document.querySelectorAll<HTMLElement>("[data-food-section]");
+
+  gallerySections.forEach((section) => {
+    const gallery = section.querySelector<HTMLElement>("[data-mobile-gallery]");
+    const dotButtons = section.querySelectorAll<HTMLButtonElement>("[data-gallery-dot]");
+
+    if (!gallery || dotButtons.length === 0) {
+      return;
+    }
+
+    const slides = Array.from(
+      gallery.querySelectorAll<HTMLElement>("[data-gallery-slide]"),
+    );
+
+    if (slides.length === 0) {
+      return;
+    }
+
+    const syncActiveDot = (): void => {
+      const galleryCenter = gallery.scrollLeft + gallery.clientWidth / 2;
+      let closestIndex = 0;
+      let smallestDistance = Number.POSITIVE_INFINITY;
+
+      slides.forEach((slide, slideIndex) => {
+        const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
+        const distance = Math.abs(slideCenter - galleryCenter);
+
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestIndex = slideIndex;
+        }
+      });
+
+      setActiveGalleryDot(dotButtons, closestIndex);
+    };
+
+    let isTicking = false;
+    gallery.addEventListener(
+      "scroll",
+      () => {
+        if (isTicking) {
+          return;
+        }
+
+        isTicking = true;
+        window.requestAnimationFrame(() => {
+          syncActiveDot();
+          isTicking = false;
+        });
+      },
+      { passive: true },
+    );
+
+    dotButtons.forEach((dotButton) => {
+      dotButton.addEventListener("click", () => {
+        const slideIndex = Number(dotButton.dataset.galleryIndex ?? 0);
+        const targetSlide = slides[slideIndex];
+
+        if (!targetSlide) {
+          return;
+        }
+
+        gallery.scrollTo({ left: targetSlide.offsetLeft, behavior: "smooth" });
+        setActiveGalleryDot(dotButtons, slideIndex);
+      });
+    });
+
+    window.addEventListener("resize", syncActiveDot);
+    syncActiveDot();
+  });
 };
 
 const setActivePager = (index: number): void => {
@@ -508,4 +624,5 @@ const renderFoodSections = (): void => {
 };
 
 renderFoodSections();
+buildMobileGalleries();
 buildPagers();

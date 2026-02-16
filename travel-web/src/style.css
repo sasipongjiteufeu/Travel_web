@@ -1,11 +1,44 @@
 @import "tailwindcss";
 
+/* Slightly increase overall text scale for readability. */
+:root {
+  font-size: 17px;
+}
+
 .page-btn {
   @apply w-10 h-10 shrink-0 rounded-full bg-slate-200 text-slate-700 font-medium transition-all duration-200 hover:bg-emerald-500 hover:text-white active:scale-95;
 }
 
 .page-btn-active {
   @apply bg-emerald-500 text-white;
+}
+
+.mobile-gallery {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.mobile-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background-color: rgb(148 163 184 / 0.65);
+  transition: width 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-dot-active {
+  width: 1.4rem;
+  background-color: rgb(16 185 129);
+}
+
+.gallery-dot:focus-visible {
+  outline: 2px solid rgb(52 211 153);
+  outline-offset: 2px;
 }
 
 @keyframes nudgeRight {
