@@ -365,7 +365,7 @@ const renderFoodSection = (item: FoodItem, index: number): string => {
     .join("");
 
   return `
-    <section id="${sectionId}" data-food-section data-food-index="${index}" class="bg-gradient-to-br from-slate-50 via-white to-slate-100 ${index > 0 ? "border-t border-slate-200/70" : ""}">
+    <section id="${sectionId}" data-food-section data-food-index="${index}" class="food-section-motion section-hidden-down bg-gradient-to-br from-slate-50 via-white to-slate-100 ${index > 0 ? "border-t border-slate-200/70" : ""}">
       <div class="mx-auto w-full max-w-[1800px] px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-[300px_1fr_300px] gap-8 items-start md:items-stretch">
           <div class="md:hidden">
@@ -543,6 +543,71 @@ const buildMobileGalleries = (): void => {
   });
 };
 
+type SectionFadeState = "visible" | "hidden-up" | "hidden-down";
+
+const setSectionFadeState = (
+  section: HTMLElement,
+  state: SectionFadeState,
+): void => {
+  section.classList.remove("section-visible", "section-hidden-up", "section-hidden-down");
+
+  if (state === "visible") {
+    section.classList.add("section-visible");
+    return;
+  }
+
+  section.classList.add(state === "hidden-up" ? "section-hidden-up" : "section-hidden-down");
+};
+
+const buildSectionFadeAnimations = (): void => {
+  const sections = document.querySelectorAll<HTMLElement>("[data-food-section]");
+  if (sections.length === 0) {
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    sections.forEach((section) => setSectionFadeState(section, "visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const section = entry.target as HTMLElement;
+        if (entry.isIntersecting && entry.intersectionRatio > 0.12) {
+          setSectionFadeState(section, "visible");
+          return;
+        }
+
+        setSectionFadeState(
+          section,
+          entry.boundingClientRect.top < 0 ? "hidden-up" : "hidden-down",
+        );
+      });
+    },
+    {
+      threshold: [0, 0.12, 0.3, 0.6],
+      rootMargin: "-8% 0px -8% 0px",
+    },
+  );
+
+  const topBoundary = window.innerHeight * 0.08;
+  const bottomBoundary = window.innerHeight * 0.92;
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const isInsideViewport = rect.top < bottomBoundary && rect.bottom > topBoundary;
+
+    if (isInsideViewport) {
+      setSectionFadeState(section, "visible");
+    } else {
+      setSectionFadeState(section, rect.top < 0 ? "hidden-up" : "hidden-down");
+    }
+
+    observer.observe(section);
+  });
+};
+
 const setActivePager = (index: number): void => {
   const pagerButtons = document.querySelectorAll<HTMLButtonElement>("[data-food-target]");
   pagerButtons.forEach((button) => {
@@ -624,5 +689,6 @@ const renderFoodSections = (): void => {
 };
 
 renderFoodSections();
+buildSectionFadeAnimations();
 buildMobileGalleries();
 buildPagers();

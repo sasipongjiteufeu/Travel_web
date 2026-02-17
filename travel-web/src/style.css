@@ -88,6 +88,32 @@
   .gallery-item{ flex-basis: calc((100% - (3 * 12px)) / 4); } /* 4 รูป */
 }
 
+.food-section-motion {
+  will-change: opacity, transform, filter;
+  transition:
+    opacity 0.48s ease,
+    transform 0.58s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.48s ease;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.section-hidden-up {
+  opacity: 0;
+  transform: translateY(-42px);
+  filter: blur(1.5px);
+}
+
+.section-hidden-down {
+  opacity: 0;
+  transform: translateY(42px);
+  filter: blur(1.5px);
+}
+
 @keyframes heroRiseIn {
   from {
     opacity: 0;
@@ -191,6 +217,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .food-section-motion {
+    transition: none;
+  }
+
+  .section-visible,
+  .section-hidden-up,
+  .section-hidden-down {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
   .hero-frost,
   .hero-title,
   .hero-title-chip,
