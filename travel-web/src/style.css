@@ -87,3 +87,119 @@
 @media (min-width: 1024px){
   .gallery-item{ flex-basis: calc((100% - (3 * 12px)) / 4); } /* 4 รูป */
 }
+
+@keyframes heroRiseIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes heroGlowPulse {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(1.06);
+  }
+  50% {
+    opacity: 0.68;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes heroPatternDriftA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(14px, -8px, 0);
+  }
+}
+
+@keyframes heroPatternDriftB {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-12px, 10px, 0);
+  }
+}
+
+.hero-section {
+  isolation: isolate;
+}
+
+.hero-frost {
+  animation: heroFadeIn 0.7s ease-out both;
+}
+
+.hero-title {
+  animation: heroRiseIn 0.8s ease-out both;
+}
+
+.hero-title-chip {
+  animation: heroFadeIn 1s ease-out 0.25s both;
+}
+
+.hero-subtitle {
+  animation: heroRiseIn 0.9s ease-out 0.2s both;
+}
+
+.hero-pattern-a {
+  animation: heroPatternDriftA 8s ease-in-out infinite;
+}
+
+.hero-pattern-b {
+  animation: heroPatternDriftB 9s ease-in-out infinite;
+}
+
+.hero-visual-card {
+  animation: heroRiseIn 0.85s ease-out 0.18s both;
+}
+
+.hero-visual-main {
+  animation: heroFloat 6s ease-in-out 1.15s infinite;
+}
+
+.hero-visual-glow {
+  animation: heroGlowPulse 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-frost,
+  .hero-title,
+  .hero-title-chip,
+  .hero-subtitle,
+  .hero-pattern-a,
+  .hero-pattern-b,
+  .hero-visual-card,
+  .hero-visual-main,
+  .hero-visual-glow {
+    animation: none !important;
+  }
+}
