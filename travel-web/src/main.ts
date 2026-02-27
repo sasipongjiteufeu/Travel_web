@@ -2,6 +2,7 @@ import "./style.css";
 
 type FoodItem = {
   code: string;
+  pagerCode?: string;
   title: string;
   intro: string;
   tagline: string;
@@ -191,6 +192,7 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
   },
   {
     code: "H",
+    pagerCode: "G",
     title: "ถั่วกรอบแก้ว",
     intro: "สูตรลับชุมชน เคี่ยวด้วยใจ กรอบหอมเพลินจนหยุดไม่อยู่",
     tagline: "สูตรลับวัยเก๋า คัดเน้น ๆ เคี่ยวด้วยใจ กรอบมันหมดถุงไม่รู้ตัว",
@@ -266,9 +268,9 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
   },
   {
     code: "K",
-    title: "ผัดไทยท่าฉางแม่เพ็ญ และเครื่องแกงแม่เพ็ญ",
-    intro: "เมนูผัดไทยรสมือชุมชนคู่กับเครื่องแกงใต้เข้มข้น จากร้านเดียวกันในตำบลเขาถ่าน",
-    tagline: "ผัดไทยปรุงสด เครื่องแกงถึงพริกถึงขิง อร่อยจริงใจในราคาชุมชน",
+    title: "ผัดไทยท่าฉางป้าศรี",
+    intro: "ผัดไทยท่าฉางป้าศรี เส้นเหนียวนุ่ม ชุ่มซอสสูตรเด็ด รสฝีมือป้าศรี อร่อยเข้มจนไม่ต้องปรุงเพิ่ม",
+    tagline: "ผัดไทยท่าฉาง เส้นเหนียวนุ่ม ชุ่มซอสสูตรเด็ด... รสฝีมือป้าศรี อร่อยเข้มจนไม่ต้องปรุงเพิ่ม",
     highlights: [
       "ผัดไทยปรุงใหม่จานต่อจาน สด สะอาด",
       "ซอสเข้มข้น กลมกล่อม ลงตัวแบบท่าฉาง",
@@ -276,20 +278,51 @@ const FOOD_ITEMS: ReadonlyArray<FoodItem> = [
       "สินค้าคุณภาพที่เติบโตจากเสียงบอกต่อ",
     ],
     story: [
-      "ผัดไทยท่าฉางแม่เพ็ญต่อยอดเมนูเส้นยอดนิยมให้เข้ากับรสนิยมคนท้องถิ่น โดยเน้นวัตถุดิบสดใหม่และมาตรฐานความสะอาดในทุกจาน",
-      "ส่วนเครื่องแกงแม่เพ็ญใช้สมุนไพรธรรมชาติคัดสรรอย่างพิถีพิถัน ให้รสจัดจ้านแบบครัวใต้แท้ เหมาะทั้งใช้ในครัวเรือนและร้านอาหาร",
-      "ทั้งสองผลิตภัณฑ์จึงเป็นภาพสะท้อนของชุมชนที่รักษารากเดิมและพัฒนาสินค้าให้เข้าถึงคนรุ่นใหม่ได้พร้อมกัน",
+      "ณ อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี หากเอ่ยถึงเมนูเส้นที่ครองใจคนในพื้นที่และนักเดินทางมาอย่างยาวนาน ต้องยกให้ ผัดไทยเฮาส์ ป้าศรี ร้านอาหารเล็ก ๆ ที่อบอวลไปด้วยกลิ่นหอมของกระทะและรอยยิ้มอันอบอุ่น",
+      "ความพิเศษของผัดไทยป้าศรี ไม่ใช่แค่การผัดเส้น แต่มันคือศิลปะการปรุงรสแบบ \"ผัดไทยท่าฉางขนานแท้\" ที่สืบทอดสูตรลับเฉพาะตัว จุดเริ่มต้นความอร่อยอยู่ที่ น้ำซอสผัดไทย ที่เคี่ยวจากวัตถุดิบธรรมชาติ ทั้งน้ำตาลมะพร้าว น้ำมะขามเปียก และเครื่องแกงสูตรพิเศษ จนได้น้ำซอสสีสวย รสชาติเข้มข้น หวาน เปรี้ยว เค็ม เผ็ด ครบรส"
+      ,"เมื่อนำลงไปผัดกับเส้นเล็กเหนียวนุ่มด้วยไฟแรงทั่วถึง เส้นจะดูดซึมน้ำซอสเข้าไปจนฉ่ำวาว ไม่แห้งกระด้าง ผสานกับความมันของกะทิสด (เอกลักษณ์ผัดไทยท่าฉาง) และความสดของกุ้งหรือเครื่องเคียงต่าง ๆ ทำให้ได้รสสัมผัสที่นุ่มนวลแต่จัดจ้าน กลมกล่อมจนแทบไม่ต้องบีบมะนาวหรือเติมพริกเพิ่ม นี่คือรสรสมือแม่ที่ใส่ใจในทุกจาน เหมือนทำให้ลูกหลานทานที่บ้าน"
     ],
     contacts: [
-      "บ้านเลขที่ 4 หมู่ที่ 5 ตำบลเขาถ่าน อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี",
-      "ชื่อร้าน ร้านเครื่องแกงแม่เพ็ญบ้านหนองดูน",
-      "หมายเลขโทรศัพท์ 061-225-3809",
+      "182/1 หมู่ 3 ตำบลคลองไทร อำเภอท่าฉาง จังหวัดสุราษฎร์ธานี	",
+      "ชื่อร้าน ผัดไทยท่าฉาง by ผัดไทยเฮาส์",
+      "หมายเลขโทรศัพท์ 0919154428, 0896461588",
     ],
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3937.047939395954!2d99.11574999999999!3d9.32902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMTknNDQuNSJOIDk5wrAwNic1Ni43IkU!5e0!3m2!1sth!2sth!4v1770913718881!5m2!1sth!2sth",
     mapLink: "https://maps.app.goo.gl/hXQZ321T2ro2VQ3z7",
     images: ["K1.png", "K2.png", "K3.png", "K4.png", "K5.png", "K6.png"],
   },
 ];
+
+type PagerGroup = {
+  pagerCode: string;
+  targetId: string;
+  title: string;
+};
+
+const getPagerCode = (item: FoodItem): string => item.pagerCode ?? item.code;
+
+const PAGER_GROUPS = FOOD_ITEMS.reduce<PagerGroup[]>((groups, item, index) => {
+  const pagerCode = getPagerCode(item);
+
+  if (groups.some((group) => group.pagerCode === pagerCode)) {
+    return groups;
+  }
+
+  groups.push({
+    pagerCode,
+    targetId: `food-section-${index + 1}`,
+    title: item.title,
+  });
+
+  return groups;
+}, []);
+
+const SECTION_INDEX_TO_PAGER_INDEX = FOOD_ITEMS.map((item) =>
+  PAGER_GROUPS.findIndex((group) => group.pagerCode === getPagerCode(item)),
+);
+
+const getPagerLabel = (index: number): string =>
+  String.fromCharCode("A".charCodeAt(0) + index);
 
 const escapeHtml = (value: string): string =>
   value
@@ -624,10 +657,10 @@ const buildPagers = (): void => {
     return;
   }
 
-  const pagerMarkup = FOOD_ITEMS.map(
-    (item, index) => `
-      <button class="page-btn" data-food-target="food-section-${index + 1}" data-food-index="${index}" aria-label="ไปยังเมนู ${escapeHtml(item.title)}">
-        ${escapeHtml(item.code)}
+  const pagerMarkup = PAGER_GROUPS.map(
+    (group, index) => `
+      <button class="page-btn" data-food-target="${group.targetId}" data-food-index="${index}" aria-label="ไปยังเมนู ${escapeHtml(group.title)}">
+        ${escapeHtml(getPagerLabel(index))}
       </button>
     `,
   ).join("");
@@ -664,7 +697,7 @@ const buildPagers = (): void => {
           }
           const sectionElement = entry.target as HTMLElement;
           const sectionIndex = Number(sectionElement.dataset.foodIndex ?? 0);
-          setActivePager(sectionIndex);
+          setActivePager(SECTION_INDEX_TO_PAGER_INDEX[sectionIndex] ?? 0);
         });
       },
       { threshold: 0.5 },
